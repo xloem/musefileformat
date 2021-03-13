@@ -7,625 +7,625 @@
 #endif
 
 #include "Muse_v2.pb-c.h"
-void   muse_data_collection__init
-                     (MuseDataCollection         *message)
+void   muse2__data_collection__init
+                     (Muse2__DataCollection         *message)
 {
-  static MuseDataCollection init_value = MUSE_DATA_COLLECTION__INIT;
+  static Muse2__DataCollection init_value = MUSE2__DATA_COLLECTION__INIT;
   *message = init_value;
 }
-size_t muse_data_collection__get_packed_size
-                     (const MuseDataCollection *message)
+size_t muse2__data_collection__get_packed_size
+                     (const Muse2__DataCollection *message)
 {
-  assert(message->base.descriptor == &muse_data_collection__descriptor);
+  assert(message->base.descriptor == &muse2__data_collection__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t muse_data_collection__pack
-                     (const MuseDataCollection *message,
+size_t muse2__data_collection__pack
+                     (const Muse2__DataCollection *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &muse_data_collection__descriptor);
+  assert(message->base.descriptor == &muse2__data_collection__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t muse_data_collection__pack_to_buffer
-                     (const MuseDataCollection *message,
+size_t muse2__data_collection__pack_to_buffer
+                     (const Muse2__DataCollection *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &muse_data_collection__descriptor);
+  assert(message->base.descriptor == &muse2__data_collection__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-MuseDataCollection *
-       muse_data_collection__unpack
+Muse2__DataCollection *
+       muse2__data_collection__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (MuseDataCollection *)
-     protobuf_c_message_unpack (&muse_data_collection__descriptor,
+  return (Muse2__DataCollection *)
+     protobuf_c_message_unpack (&muse2__data_collection__descriptor,
                                 allocator, len, data);
 }
-void   muse_data_collection__free_unpacked
-                     (MuseDataCollection *message,
+void   muse2__data_collection__free_unpacked
+                     (Muse2__DataCollection *message,
                       ProtobufCAllocator *allocator)
 {
-  assert(message->base.descriptor == &muse_data_collection__descriptor);
+  assert(message->base.descriptor == &muse2__data_collection__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   muse_data__init
-                     (MuseData         *message)
+void   muse2__data__init
+                     (Muse2__Data         *message)
 {
-  static MuseData init_value = MUSE_DATA__INIT;
+  static Muse2__Data init_value = MUSE2__DATA__INIT;
   *message = init_value;
 }
-size_t muse_data__get_packed_size
-                     (const MuseData *message)
+size_t muse2__data__get_packed_size
+                     (const Muse2__Data *message)
 {
-  assert(message->base.descriptor == &muse_data__descriptor);
+  assert(message->base.descriptor == &muse2__data__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t muse_data__pack
-                     (const MuseData *message,
+size_t muse2__data__pack
+                     (const Muse2__Data *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &muse_data__descriptor);
+  assert(message->base.descriptor == &muse2__data__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t muse_data__pack_to_buffer
-                     (const MuseData *message,
+size_t muse2__data__pack_to_buffer
+                     (const Muse2__Data *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &muse_data__descriptor);
+  assert(message->base.descriptor == &muse2__data__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-MuseData *
-       muse_data__unpack
+Muse2__Data *
+       muse2__data__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (MuseData *)
-     protobuf_c_message_unpack (&muse_data__descriptor,
+  return (Muse2__Data *)
+     protobuf_c_message_unpack (&muse2__data__descriptor,
                                 allocator, len, data);
 }
-void   muse_data__free_unpacked
-                     (MuseData *message,
+void   muse2__data__free_unpacked
+                     (Muse2__Data *message,
                       ProtobufCAllocator *allocator)
 {
-  assert(message->base.descriptor == &muse_data__descriptor);
+  assert(message->base.descriptor == &muse2__data__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   eeg__init
-                     (EEG         *message)
+void   muse2__eeg__init
+                     (Muse2__EEG         *message)
 {
-  static EEG init_value = EEG__INIT;
+  static Muse2__EEG init_value = MUSE2__EEG__INIT;
   *message = init_value;
 }
-size_t eeg__get_packed_size
-                     (const EEG *message)
+size_t muse2__eeg__get_packed_size
+                     (const Muse2__EEG *message)
 {
-  assert(message->base.descriptor == &eeg__descriptor);
+  assert(message->base.descriptor == &muse2__eeg__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t eeg__pack
-                     (const EEG *message,
+size_t muse2__eeg__pack
+                     (const Muse2__EEG *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &eeg__descriptor);
+  assert(message->base.descriptor == &muse2__eeg__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t eeg__pack_to_buffer
-                     (const EEG *message,
+size_t muse2__eeg__pack_to_buffer
+                     (const Muse2__EEG *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &eeg__descriptor);
+  assert(message->base.descriptor == &muse2__eeg__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-EEG *
-       eeg__unpack
+Muse2__EEG *
+       muse2__eeg__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (EEG *)
-     protobuf_c_message_unpack (&eeg__descriptor,
+  return (Muse2__EEG *)
+     protobuf_c_message_unpack (&muse2__eeg__descriptor,
                                 allocator, len, data);
 }
-void   eeg__free_unpacked
-                     (EEG *message,
+void   muse2__eeg__free_unpacked
+                     (Muse2__EEG *message,
                       ProtobufCAllocator *allocator)
 {
-  assert(message->base.descriptor == &eeg__descriptor);
+  assert(message->base.descriptor == &muse2__eeg__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   muse_quantization__init
-                     (MuseQuantization         *message)
+void   muse2__quantization__init
+                     (Muse2__Quantization         *message)
 {
-  static MuseQuantization init_value = MUSE_QUANTIZATION__INIT;
+  static Muse2__Quantization init_value = MUSE2__QUANTIZATION__INIT;
   *message = init_value;
 }
-size_t muse_quantization__get_packed_size
-                     (const MuseQuantization *message)
+size_t muse2__quantization__get_packed_size
+                     (const Muse2__Quantization *message)
 {
-  assert(message->base.descriptor == &muse_quantization__descriptor);
+  assert(message->base.descriptor == &muse2__quantization__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t muse_quantization__pack
-                     (const MuseQuantization *message,
+size_t muse2__quantization__pack
+                     (const Muse2__Quantization *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &muse_quantization__descriptor);
+  assert(message->base.descriptor == &muse2__quantization__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t muse_quantization__pack_to_buffer
-                     (const MuseQuantization *message,
+size_t muse2__quantization__pack_to_buffer
+                     (const Muse2__Quantization *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &muse_quantization__descriptor);
+  assert(message->base.descriptor == &muse2__quantization__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-MuseQuantization *
-       muse_quantization__unpack
+Muse2__Quantization *
+       muse2__quantization__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (MuseQuantization *)
-     protobuf_c_message_unpack (&muse_quantization__descriptor,
+  return (Muse2__Quantization *)
+     protobuf_c_message_unpack (&muse2__quantization__descriptor,
                                 allocator, len, data);
 }
-void   muse_quantization__free_unpacked
-                     (MuseQuantization *message,
+void   muse2__quantization__free_unpacked
+                     (Muse2__Quantization *message,
                       ProtobufCAllocator *allocator)
 {
-  assert(message->base.descriptor == &muse_quantization__descriptor);
+  assert(message->base.descriptor == &muse2__quantization__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   accelerometer__init
-                     (Accelerometer         *message)
+void   muse2__accelerometer__init
+                     (Muse2__Accelerometer         *message)
 {
-  static Accelerometer init_value = ACCELEROMETER__INIT;
+  static Muse2__Accelerometer init_value = MUSE2__ACCELEROMETER__INIT;
   *message = init_value;
 }
-size_t accelerometer__get_packed_size
-                     (const Accelerometer *message)
+size_t muse2__accelerometer__get_packed_size
+                     (const Muse2__Accelerometer *message)
 {
-  assert(message->base.descriptor == &accelerometer__descriptor);
+  assert(message->base.descriptor == &muse2__accelerometer__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t accelerometer__pack
-                     (const Accelerometer *message,
+size_t muse2__accelerometer__pack
+                     (const Muse2__Accelerometer *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &accelerometer__descriptor);
+  assert(message->base.descriptor == &muse2__accelerometer__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t accelerometer__pack_to_buffer
-                     (const Accelerometer *message,
+size_t muse2__accelerometer__pack_to_buffer
+                     (const Muse2__Accelerometer *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &accelerometer__descriptor);
+  assert(message->base.descriptor == &muse2__accelerometer__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Accelerometer *
-       accelerometer__unpack
+Muse2__Accelerometer *
+       muse2__accelerometer__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Accelerometer *)
-     protobuf_c_message_unpack (&accelerometer__descriptor,
+  return (Muse2__Accelerometer *)
+     protobuf_c_message_unpack (&muse2__accelerometer__descriptor,
                                 allocator, len, data);
 }
-void   accelerometer__free_unpacked
-                     (Accelerometer *message,
+void   muse2__accelerometer__free_unpacked
+                     (Muse2__Accelerometer *message,
                       ProtobufCAllocator *allocator)
 {
-  assert(message->base.descriptor == &accelerometer__descriptor);
+  assert(message->base.descriptor == &muse2__accelerometer__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   annotation__init
-                     (Annotation         *message)
+void   muse2__annotation__init
+                     (Muse2__Annotation         *message)
 {
-  static Annotation init_value = ANNOTATION__INIT;
+  static Muse2__Annotation init_value = MUSE2__ANNOTATION__INIT;
   *message = init_value;
 }
-size_t annotation__get_packed_size
-                     (const Annotation *message)
+size_t muse2__annotation__get_packed_size
+                     (const Muse2__Annotation *message)
 {
-  assert(message->base.descriptor == &annotation__descriptor);
+  assert(message->base.descriptor == &muse2__annotation__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t annotation__pack
-                     (const Annotation *message,
+size_t muse2__annotation__pack
+                     (const Muse2__Annotation *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &annotation__descriptor);
+  assert(message->base.descriptor == &muse2__annotation__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t annotation__pack_to_buffer
-                     (const Annotation *message,
+size_t muse2__annotation__pack_to_buffer
+                     (const Muse2__Annotation *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &annotation__descriptor);
+  assert(message->base.descriptor == &muse2__annotation__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Annotation *
-       annotation__unpack
+Muse2__Annotation *
+       muse2__annotation__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Annotation *)
-     protobuf_c_message_unpack (&annotation__descriptor,
+  return (Muse2__Annotation *)
+     protobuf_c_message_unpack (&muse2__annotation__descriptor,
                                 allocator, len, data);
 }
-void   annotation__free_unpacked
-                     (Annotation *message,
+void   muse2__annotation__free_unpacked
+                     (Muse2__Annotation *message,
                       ProtobufCAllocator *allocator)
 {
-  assert(message->base.descriptor == &annotation__descriptor);
+  assert(message->base.descriptor == &muse2__annotation__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   battery__init
-                     (Battery         *message)
+void   muse2__battery__init
+                     (Muse2__Battery         *message)
 {
-  static Battery init_value = BATTERY__INIT;
+  static Muse2__Battery init_value = MUSE2__BATTERY__INIT;
   *message = init_value;
 }
-size_t battery__get_packed_size
-                     (const Battery *message)
+size_t muse2__battery__get_packed_size
+                     (const Muse2__Battery *message)
 {
-  assert(message->base.descriptor == &battery__descriptor);
+  assert(message->base.descriptor == &muse2__battery__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t battery__pack
-                     (const Battery *message,
+size_t muse2__battery__pack
+                     (const Muse2__Battery *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &battery__descriptor);
+  assert(message->base.descriptor == &muse2__battery__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t battery__pack_to_buffer
-                     (const Battery *message,
+size_t muse2__battery__pack_to_buffer
+                     (const Muse2__Battery *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &battery__descriptor);
+  assert(message->base.descriptor == &muse2__battery__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Battery *
-       battery__unpack
+Muse2__Battery *
+       muse2__battery__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Battery *)
-     protobuf_c_message_unpack (&battery__descriptor,
+  return (Muse2__Battery *)
+     protobuf_c_message_unpack (&muse2__battery__descriptor,
                                 allocator, len, data);
 }
-void   battery__free_unpacked
-                     (Battery *message,
+void   muse2__battery__free_unpacked
+                     (Muse2__Battery *message,
                       ProtobufCAllocator *allocator)
 {
-  assert(message->base.descriptor == &battery__descriptor);
+  assert(message->base.descriptor == &muse2__battery__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   muse_version__init
-                     (MuseVersion         *message)
+void   muse2__version__init
+                     (Muse2__Version         *message)
 {
-  static MuseVersion init_value = MUSE_VERSION__INIT;
+  static Muse2__Version init_value = MUSE2__VERSION__INIT;
   *message = init_value;
 }
-size_t muse_version__get_packed_size
-                     (const MuseVersion *message)
+size_t muse2__version__get_packed_size
+                     (const Muse2__Version *message)
 {
-  assert(message->base.descriptor == &muse_version__descriptor);
+  assert(message->base.descriptor == &muse2__version__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t muse_version__pack
-                     (const MuseVersion *message,
+size_t muse2__version__pack
+                     (const Muse2__Version *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &muse_version__descriptor);
+  assert(message->base.descriptor == &muse2__version__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t muse_version__pack_to_buffer
-                     (const MuseVersion *message,
+size_t muse2__version__pack_to_buffer
+                     (const Muse2__Version *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &muse_version__descriptor);
+  assert(message->base.descriptor == &muse2__version__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-MuseVersion *
-       muse_version__unpack
+Muse2__Version *
+       muse2__version__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (MuseVersion *)
-     protobuf_c_message_unpack (&muse_version__descriptor,
+  return (Muse2__Version *)
+     protobuf_c_message_unpack (&muse2__version__descriptor,
                                 allocator, len, data);
 }
-void   muse_version__free_unpacked
-                     (MuseVersion *message,
+void   muse2__version__free_unpacked
+                     (Muse2__Version *message,
                       ProtobufCAllocator *allocator)
 {
-  assert(message->base.descriptor == &muse_version__descriptor);
+  assert(message->base.descriptor == &muse2__version__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   muse_config__init
-                     (MuseConfig         *message)
+void   muse2__config__init
+                     (Muse2__Config         *message)
 {
-  static MuseConfig init_value = MUSE_CONFIG__INIT;
+  static Muse2__Config init_value = MUSE2__CONFIG__INIT;
   *message = init_value;
 }
-size_t muse_config__get_packed_size
-                     (const MuseConfig *message)
+size_t muse2__config__get_packed_size
+                     (const Muse2__Config *message)
 {
-  assert(message->base.descriptor == &muse_config__descriptor);
+  assert(message->base.descriptor == &muse2__config__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t muse_config__pack
-                     (const MuseConfig *message,
+size_t muse2__config__pack
+                     (const Muse2__Config *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &muse_config__descriptor);
+  assert(message->base.descriptor == &muse2__config__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t muse_config__pack_to_buffer
-                     (const MuseConfig *message,
+size_t muse2__config__pack_to_buffer
+                     (const Muse2__Config *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &muse_config__descriptor);
+  assert(message->base.descriptor == &muse2__config__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-MuseConfig *
-       muse_config__unpack
+Muse2__Config *
+       muse2__config__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (MuseConfig *)
-     protobuf_c_message_unpack (&muse_config__descriptor,
+  return (Muse2__Config *)
+     protobuf_c_message_unpack (&muse2__config__descriptor,
                                 allocator, len, data);
 }
-void   muse_config__free_unpacked
-                     (MuseConfig *message,
+void   muse2__config__free_unpacked
+                     (Muse2__Config *message,
                       ProtobufCAllocator *allocator)
 {
-  assert(message->base.descriptor == &muse_config__descriptor);
+  assert(message->base.descriptor == &muse2__config__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   eeg__dropped_samples__init
-                     (EEGDroppedSamples         *message)
+void   muse2__eeg__dropped_samples__init
+                     (Muse2__EEGDroppedSamples         *message)
 {
-  static EEGDroppedSamples init_value = EEG__DROPPED_SAMPLES__INIT;
+  static Muse2__EEGDroppedSamples init_value = MUSE2__EEG__DROPPED_SAMPLES__INIT;
   *message = init_value;
 }
-size_t eeg__dropped_samples__get_packed_size
-                     (const EEGDroppedSamples *message)
+size_t muse2__eeg__dropped_samples__get_packed_size
+                     (const Muse2__EEGDroppedSamples *message)
 {
-  assert(message->base.descriptor == &eeg__dropped_samples__descriptor);
+  assert(message->base.descriptor == &muse2__eeg__dropped_samples__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t eeg__dropped_samples__pack
-                     (const EEGDroppedSamples *message,
+size_t muse2__eeg__dropped_samples__pack
+                     (const Muse2__EEGDroppedSamples *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &eeg__dropped_samples__descriptor);
+  assert(message->base.descriptor == &muse2__eeg__dropped_samples__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t eeg__dropped_samples__pack_to_buffer
-                     (const EEGDroppedSamples *message,
+size_t muse2__eeg__dropped_samples__pack_to_buffer
+                     (const Muse2__EEGDroppedSamples *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &eeg__dropped_samples__descriptor);
+  assert(message->base.descriptor == &muse2__eeg__dropped_samples__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-EEGDroppedSamples *
-       eeg__dropped_samples__unpack
+Muse2__EEGDroppedSamples *
+       muse2__eeg__dropped_samples__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (EEGDroppedSamples *)
-     protobuf_c_message_unpack (&eeg__dropped_samples__descriptor,
+  return (Muse2__EEGDroppedSamples *)
+     protobuf_c_message_unpack (&muse2__eeg__dropped_samples__descriptor,
                                 allocator, len, data);
 }
-void   eeg__dropped_samples__free_unpacked
-                     (EEGDroppedSamples *message,
+void   muse2__eeg__dropped_samples__free_unpacked
+                     (Muse2__EEGDroppedSamples *message,
                       ProtobufCAllocator *allocator)
 {
-  assert(message->base.descriptor == &eeg__dropped_samples__descriptor);
+  assert(message->base.descriptor == &muse2__eeg__dropped_samples__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   acc__dropped_samples__init
-                     (ACCDroppedSamples         *message)
+void   muse2__acc__dropped_samples__init
+                     (Muse2__ACCDroppedSamples         *message)
 {
-  static ACCDroppedSamples init_value = ACC__DROPPED_SAMPLES__INIT;
+  static Muse2__ACCDroppedSamples init_value = MUSE2__ACC__DROPPED_SAMPLES__INIT;
   *message = init_value;
 }
-size_t acc__dropped_samples__get_packed_size
-                     (const ACCDroppedSamples *message)
+size_t muse2__acc__dropped_samples__get_packed_size
+                     (const Muse2__ACCDroppedSamples *message)
 {
-  assert(message->base.descriptor == &acc__dropped_samples__descriptor);
+  assert(message->base.descriptor == &muse2__acc__dropped_samples__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t acc__dropped_samples__pack
-                     (const ACCDroppedSamples *message,
+size_t muse2__acc__dropped_samples__pack
+                     (const Muse2__ACCDroppedSamples *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &acc__dropped_samples__descriptor);
+  assert(message->base.descriptor == &muse2__acc__dropped_samples__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t acc__dropped_samples__pack_to_buffer
-                     (const ACCDroppedSamples *message,
+size_t muse2__acc__dropped_samples__pack_to_buffer
+                     (const Muse2__ACCDroppedSamples *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &acc__dropped_samples__descriptor);
+  assert(message->base.descriptor == &muse2__acc__dropped_samples__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-ACCDroppedSamples *
-       acc__dropped_samples__unpack
+Muse2__ACCDroppedSamples *
+       muse2__acc__dropped_samples__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (ACCDroppedSamples *)
-     protobuf_c_message_unpack (&acc__dropped_samples__descriptor,
+  return (Muse2__ACCDroppedSamples *)
+     protobuf_c_message_unpack (&muse2__acc__dropped_samples__descriptor,
                                 allocator, len, data);
 }
-void   acc__dropped_samples__free_unpacked
-                     (ACCDroppedSamples *message,
+void   muse2__acc__dropped_samples__free_unpacked
+                     (Muse2__ACCDroppedSamples *message,
                       ProtobufCAllocator *allocator)
 {
-  assert(message->base.descriptor == &acc__dropped_samples__descriptor);
+  assert(message->base.descriptor == &muse2__acc__dropped_samples__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   computing_device__init
-                     (ComputingDevice         *message)
+void   muse2__computing_device__init
+                     (Muse2__ComputingDevice         *message)
 {
-  static ComputingDevice init_value = COMPUTING_DEVICE__INIT;
+  static Muse2__ComputingDevice init_value = MUSE2__COMPUTING_DEVICE__INIT;
   *message = init_value;
 }
-size_t computing_device__get_packed_size
-                     (const ComputingDevice *message)
+size_t muse2__computing_device__get_packed_size
+                     (const Muse2__ComputingDevice *message)
 {
-  assert(message->base.descriptor == &computing_device__descriptor);
+  assert(message->base.descriptor == &muse2__computing_device__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t computing_device__pack
-                     (const ComputingDevice *message,
+size_t muse2__computing_device__pack
+                     (const Muse2__ComputingDevice *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &computing_device__descriptor);
+  assert(message->base.descriptor == &muse2__computing_device__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t computing_device__pack_to_buffer
-                     (const ComputingDevice *message,
+size_t muse2__computing_device__pack_to_buffer
+                     (const Muse2__ComputingDevice *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &computing_device__descriptor);
+  assert(message->base.descriptor == &muse2__computing_device__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-ComputingDevice *
-       computing_device__unpack
+Muse2__ComputingDevice *
+       muse2__computing_device__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (ComputingDevice *)
-     protobuf_c_message_unpack (&computing_device__descriptor,
+  return (Muse2__ComputingDevice *)
+     protobuf_c_message_unpack (&muse2__computing_device__descriptor,
                                 allocator, len, data);
 }
-void   computing_device__free_unpacked
-                     (ComputingDevice *message,
+void   muse2__computing_device__free_unpacked
+                     (Muse2__ComputingDevice *message,
                       ProtobufCAllocator *allocator)
 {
-  assert(message->base.descriptor == &computing_device__descriptor);
+  assert(message->base.descriptor == &muse2__computing_device__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   dsp__init
-                     (DSP         *message)
+void   muse2__dsp__init
+                     (Muse2__DSP         *message)
 {
-  static DSP init_value = DSP__INIT;
+  static Muse2__DSP init_value = MUSE2__DSP__INIT;
   *message = init_value;
 }
-size_t dsp__get_packed_size
-                     (const DSP *message)
+size_t muse2__dsp__get_packed_size
+                     (const Muse2__DSP *message)
 {
-  assert(message->base.descriptor == &dsp__descriptor);
+  assert(message->base.descriptor == &muse2__dsp__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t dsp__pack
-                     (const DSP *message,
+size_t muse2__dsp__pack
+                     (const Muse2__DSP *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &dsp__descriptor);
+  assert(message->base.descriptor == &muse2__dsp__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t dsp__pack_to_buffer
-                     (const DSP *message,
+size_t muse2__dsp__pack_to_buffer
+                     (const Muse2__DSP *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &dsp__descriptor);
+  assert(message->base.descriptor == &muse2__dsp__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-DSP *
-       dsp__unpack
+Muse2__DSP *
+       muse2__dsp__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (DSP *)
-     protobuf_c_message_unpack (&dsp__descriptor,
+  return (Muse2__DSP *)
+     protobuf_c_message_unpack (&muse2__dsp__descriptor,
                                 allocator, len, data);
 }
-void   dsp__free_unpacked
-                     (DSP *message,
+void   muse2__dsp__free_unpacked
+                     (Muse2__DSP *message,
                       ProtobufCAllocator *allocator)
 {
-  assert(message->base.descriptor == &dsp__descriptor);
+  assert(message->base.descriptor == &muse2__dsp__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor muse_data_collection__field_descriptors[1] =
+static const ProtobufCFieldDescriptor muse2__data_collection__field_descriptors[1] =
 {
   {
     "collection",
     1,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(MuseDataCollection, n_collection),
-    offsetof(MuseDataCollection, collection),
-    &muse_data__descriptor,
+    offsetof(Muse2__DataCollection, n_collection),
+    offsetof(Muse2__DataCollection, collection),
+    &muse2__data__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned muse_data_collection__field_indices_by_name[] = {
+static const unsigned muse2__data_collection__field_indices_by_name[] = {
   0,   /* field[0] = collection */
 };
-static const ProtobufCIntRange muse_data_collection__number_ranges[1 + 1] =
+static const ProtobufCIntRange muse2__data_collection__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor muse_data_collection__descriptor =
+const ProtobufCMessageDescriptor muse2__data_collection__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "MuseDataCollection",
-  "MuseDataCollection",
-  "MuseDataCollection",
-  "",
-  sizeof(MuseDataCollection),
+  "muse2.DataCollection",
+  "DataCollection",
+  "Muse2__DataCollection",
+  "muse2",
+  sizeof(Muse2__DataCollection),
   1,
-  muse_data_collection__field_descriptors,
-  muse_data_collection__field_indices_by_name,
-  1,  muse_data_collection__number_ranges,
-  (ProtobufCMessageInit) muse_data_collection__init,
+  muse2__data_collection__field_descriptors,
+  muse2__data_collection__field_indices_by_name,
+  1,  muse2__data_collection__number_ranges,
+  (ProtobufCMessageInit) muse2__data_collection__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-const ProtobufCEnumValue muse_data__datatype__enum_values_by_number[15] =
+const ProtobufCEnumValue muse2__data__datatype__enum_values_by_number[15] =
 {
-  { "EEG", "MUSE_DATA__DATATYPE__EEG", 0 },
-  { "QUANT", "MUSE_DATA__DATATYPE__QUANT", 1 },
-  { "ACCEL", "MUSE_DATA__DATATYPE__ACCEL", 2 },
-  { "BATTERY", "MUSE_DATA__DATATYPE__BATTERY", 3 },
-  { "VERSION", "MUSE_DATA__DATATYPE__VERSION", 4 },
-  { "CONFIG", "MUSE_DATA__DATATYPE__CONFIG", 5 },
-  { "ANNOTATION", "MUSE_DATA__DATATYPE__ANNOTATION", 6 },
-  { "HISTOGRAM", "MUSE_DATA__DATATYPE__HISTOGRAM", 7 },
-  { "ALGVALUE", "MUSE_DATA__DATATYPE__ALGVALUE", 8 },
-  { "DSP", "MUSE_DATA__DATATYPE__DSP", 9 },
-  { "COMPUTING_DEVICE", "MUSE_DATA__DATATYPE__COMPUTING_DEVICE", 10 },
-  { "EEG_DROPPED", "MUSE_DATA__DATATYPE__EEG_DROPPED", 11 },
-  { "ACC_DROPPED", "MUSE_DATA__DATATYPE__ACC_DROPPED", 12 },
-  { "CALM_APP", "MUSE_DATA__DATATYPE__CALM_APP", 13 },
-  { "CALM_ALG", "MUSE_DATA__DATATYPE__CALM_ALG", 14 },
+  { "EEG", "MUSE2__DATA__DATATYPE__EEG", 0 },
+  { "QUANT", "MUSE2__DATA__DATATYPE__QUANT", 1 },
+  { "ACCEL", "MUSE2__DATA__DATATYPE__ACCEL", 2 },
+  { "BATTERY", "MUSE2__DATA__DATATYPE__BATTERY", 3 },
+  { "VERSION", "MUSE2__DATA__DATATYPE__VERSION", 4 },
+  { "CONFIG", "MUSE2__DATA__DATATYPE__CONFIG", 5 },
+  { "ANNOTATION", "MUSE2__DATA__DATATYPE__ANNOTATION", 6 },
+  { "HISTOGRAM", "MUSE2__DATA__DATATYPE__HISTOGRAM", 7 },
+  { "ALGVALUE", "MUSE2__DATA__DATATYPE__ALGVALUE", 8 },
+  { "DSP", "MUSE2__DATA__DATATYPE__DSP", 9 },
+  { "COMPUTING_DEVICE", "MUSE2__DATA__DATATYPE__COMPUTING_DEVICE", 10 },
+  { "EEG_DROPPED", "MUSE2__DATA__DATATYPE__EEG_DROPPED", 11 },
+  { "ACC_DROPPED", "MUSE2__DATA__DATATYPE__ACC_DROPPED", 12 },
+  { "CALM_APP", "MUSE2__DATA__DATATYPE__CALM_APP", 13 },
+  { "CALM_ALG", "MUSE2__DATA__DATATYPE__CALM_ALG", 14 },
 };
-static const ProtobufCIntRange muse_data__datatype__value_ranges[] = {
+static const ProtobufCIntRange muse2__data__datatype__value_ranges[] = {
 {0, 0},{0, 15}
 };
-const ProtobufCEnumValueIndex muse_data__datatype__enum_values_by_name[15] =
+const ProtobufCEnumValueIndex muse2__data__datatype__enum_values_by_name[15] =
 {
   { "ACCEL", 2 },
   { "ACC_DROPPED", 12 },
@@ -643,22 +643,22 @@ const ProtobufCEnumValueIndex muse_data__datatype__enum_values_by_name[15] =
   { "QUANT", 1 },
   { "VERSION", 4 },
 };
-const ProtobufCEnumDescriptor muse_data__datatype__descriptor =
+const ProtobufCEnumDescriptor muse2__data__datatype__descriptor =
 {
   PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
-  "MuseData.Datatype",
+  "muse2.Data.Datatype",
   "Datatype",
-  "MuseData__Datatype",
-  "",
+  "Muse2__Data__Datatype",
+  "muse2",
   15,
-  muse_data__datatype__enum_values_by_number,
+  muse2__data__datatype__enum_values_by_number,
   15,
-  muse_data__datatype__enum_values_by_name,
+  muse2__data__datatype__enum_values_by_name,
   1,
-  muse_data__datatype__value_ranges,
+  muse2__data__datatype__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCFieldDescriptor muse_data__field_descriptors[3] =
+static const ProtobufCFieldDescriptor muse2__data__field_descriptors[3] =
 {
   {
     "timestamp",
@@ -666,7 +666,7 @@ static const ProtobufCFieldDescriptor muse_data__field_descriptors[3] =
     PROTOBUF_C_LABEL_REQUIRED,
     PROTOBUF_C_TYPE_DOUBLE,
     0,   /* quantifier_offset */
-    offsetof(MuseData, timestamp),
+    offsetof(Muse2__Data, timestamp),
     NULL,
     NULL,
     0,             /* flags */
@@ -678,8 +678,8 @@ static const ProtobufCFieldDescriptor muse_data__field_descriptors[3] =
     PROTOBUF_C_LABEL_REQUIRED,
     PROTOBUF_C_TYPE_ENUM,
     0,   /* quantifier_offset */
-    offsetof(MuseData, datatype),
-    &muse_data__datatype__descriptor,
+    offsetof(Muse2__Data, datatype),
+    &muse2__data__datatype__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -689,48 +689,48 @@ static const ProtobufCFieldDescriptor muse_data__field_descriptors[3] =
     3,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT64,
-    offsetof(MuseData, has_config_id),
-    offsetof(MuseData, config_id),
+    offsetof(Muse2__Data, has_config_id),
+    offsetof(Muse2__Data, config_id),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned muse_data__field_indices_by_name[] = {
+static const unsigned muse2__data__field_indices_by_name[] = {
   2,   /* field[2] = config_id */
   1,   /* field[1] = datatype */
   0,   /* field[0] = timestamp */
 };
-static const ProtobufCIntRange muse_data__number_ranges[1 + 1] =
+static const ProtobufCIntRange muse2__data__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 3 }
 };
-const ProtobufCMessageDescriptor muse_data__descriptor =
+const ProtobufCMessageDescriptor muse2__data__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "MuseData",
-  "MuseData",
-  "MuseData",
-  "",
-  sizeof(MuseData),
+  "muse2.Data",
+  "Data",
+  "Muse2__Data",
+  "muse2",
+  sizeof(Muse2__Data),
   3,
-  muse_data__field_descriptors,
-  muse_data__field_indices_by_name,
-  1,  muse_data__number_ranges,
-  (ProtobufCMessageInit) muse_data__init,
+  muse2__data__field_descriptors,
+  muse2__data__field_indices_by_name,
+  1,  muse2__data__number_ranges,
+  (ProtobufCMessageInit) muse2__data__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor eeg__field_descriptors[3] =
+static const ProtobufCFieldDescriptor muse2__eeg__field_descriptors[3] =
 {
   {
     "values",
     2,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(EEG, n_values),
-    offsetof(EEG, values),
+    offsetof(Muse2__EEG, n_values),
+    offsetof(Muse2__EEG, values),
     NULL,
     NULL,
     0,             /* flags */
@@ -741,8 +741,8 @@ static const ProtobufCFieldDescriptor eeg__field_descriptors[3] =
     5,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(EEG, has_drl),
-    offsetof(EEG, drl),
+    offsetof(Muse2__EEG, has_drl),
+    offsetof(Muse2__EEG, drl),
     NULL,
     NULL,
     0,             /* flags */
@@ -753,87 +753,87 @@ static const ProtobufCFieldDescriptor eeg__field_descriptors[3] =
     6,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(EEG, has_ref),
-    offsetof(EEG, ref),
+    offsetof(Muse2__EEG, has_ref),
+    offsetof(Muse2__EEG, ref),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned eeg__field_indices_by_name[] = {
+static const unsigned muse2__eeg__field_indices_by_name[] = {
   1,   /* field[1] = drl */
   2,   /* field[2] = ref */
   0,   /* field[0] = values */
 };
-static const ProtobufCIntRange eeg__number_ranges[2 + 1] =
+static const ProtobufCIntRange muse2__eeg__number_ranges[2 + 1] =
 {
   { 2, 0 },
   { 5, 1 },
   { 0, 3 }
 };
-const ProtobufCMessageDescriptor eeg__descriptor =
+const ProtobufCMessageDescriptor muse2__eeg__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "muse2.EEG",
   "EEG",
-  "EEG",
-  "EEG",
-  "",
-  sizeof(EEG),
+  "Muse2__EEG",
+  "muse2",
+  sizeof(Muse2__EEG),
   3,
-  eeg__field_descriptors,
-  eeg__field_indices_by_name,
-  2,  eeg__number_ranges,
-  (ProtobufCMessageInit) eeg__init,
+  muse2__eeg__field_descriptors,
+  muse2__eeg__field_indices_by_name,
+  2,  muse2__eeg__number_ranges,
+  (ProtobufCMessageInit) muse2__eeg__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor muse_quantization__field_descriptors[1] =
+static const ProtobufCFieldDescriptor muse2__quantization__field_descriptors[1] =
 {
   {
     "values",
     1,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(MuseQuantization, n_values),
-    offsetof(MuseQuantization, values),
+    offsetof(Muse2__Quantization, n_values),
+    offsetof(Muse2__Quantization, values),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned muse_quantization__field_indices_by_name[] = {
+static const unsigned muse2__quantization__field_indices_by_name[] = {
   0,   /* field[0] = values */
 };
-static const ProtobufCIntRange muse_quantization__number_ranges[1 + 1] =
+static const ProtobufCIntRange muse2__quantization__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor muse_quantization__descriptor =
+const ProtobufCMessageDescriptor muse2__quantization__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "MuseQuantization",
-  "MuseQuantization",
-  "MuseQuantization",
-  "",
-  sizeof(MuseQuantization),
+  "muse2.Quantization",
+  "Quantization",
+  "Muse2__Quantization",
+  "muse2",
+  sizeof(Muse2__Quantization),
   1,
-  muse_quantization__field_descriptors,
-  muse_quantization__field_indices_by_name,
-  1,  muse_quantization__number_ranges,
-  (ProtobufCMessageInit) muse_quantization__init,
+  muse2__quantization__field_descriptors,
+  muse2__quantization__field_indices_by_name,
+  1,  muse2__quantization__number_ranges,
+  (ProtobufCMessageInit) muse2__quantization__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor accelerometer__field_descriptors[3] =
+static const ProtobufCFieldDescriptor muse2__accelerometer__field_descriptors[3] =
 {
   {
     "acc1",
     1,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Accelerometer, has_acc1),
-    offsetof(Accelerometer, acc1),
+    offsetof(Muse2__Accelerometer, has_acc1),
+    offsetof(Muse2__Accelerometer, acc1),
     NULL,
     NULL,
     0,             /* flags */
@@ -844,8 +844,8 @@ static const ProtobufCFieldDescriptor accelerometer__field_descriptors[3] =
     2,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Accelerometer, has_acc2),
-    offsetof(Accelerometer, acc2),
+    offsetof(Muse2__Accelerometer, has_acc2),
+    offsetof(Muse2__Accelerometer, acc2),
     NULL,
     NULL,
     0,             /* flags */
@@ -856,71 +856,71 @@ static const ProtobufCFieldDescriptor accelerometer__field_descriptors[3] =
     3,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Accelerometer, has_acc3),
-    offsetof(Accelerometer, acc3),
+    offsetof(Muse2__Accelerometer, has_acc3),
+    offsetof(Muse2__Accelerometer, acc3),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned accelerometer__field_indices_by_name[] = {
+static const unsigned muse2__accelerometer__field_indices_by_name[] = {
   0,   /* field[0] = acc1 */
   1,   /* field[1] = acc2 */
   2,   /* field[2] = acc3 */
 };
-static const ProtobufCIntRange accelerometer__number_ranges[1 + 1] =
+static const ProtobufCIntRange muse2__accelerometer__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 3 }
 };
-const ProtobufCMessageDescriptor accelerometer__descriptor =
+const ProtobufCMessageDescriptor muse2__accelerometer__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "muse2.Accelerometer",
   "Accelerometer",
-  "Accelerometer",
-  "Accelerometer",
-  "",
-  sizeof(Accelerometer),
+  "Muse2__Accelerometer",
+  "muse2",
+  sizeof(Muse2__Accelerometer),
   3,
-  accelerometer__field_descriptors,
-  accelerometer__field_indices_by_name,
-  1,  accelerometer__number_ranges,
-  (ProtobufCMessageInit) accelerometer__init,
+  muse2__accelerometer__field_descriptors,
+  muse2__accelerometer__field_indices_by_name,
+  1,  muse2__accelerometer__number_ranges,
+  (ProtobufCMessageInit) muse2__accelerometer__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-const ProtobufCEnumValue annotation__format__enum_values_by_number[3] =
+const ProtobufCEnumValue muse2__annotation__format__enum_values_by_number[3] =
 {
-  { "PLAIN_STRING", "ANNOTATION__FORMAT__PLAIN_STRING", 0 },
-  { "JSON", "ANNOTATION__FORMAT__JSON", 1 },
-  { "OSC", "ANNOTATION__FORMAT__OSC", 2 },
+  { "PLAIN_STRING", "MUSE2__ANNOTATION__FORMAT__PLAIN_STRING", 0 },
+  { "JSON", "MUSE2__ANNOTATION__FORMAT__JSON", 1 },
+  { "OSC", "MUSE2__ANNOTATION__FORMAT__OSC", 2 },
 };
-static const ProtobufCIntRange annotation__format__value_ranges[] = {
+static const ProtobufCIntRange muse2__annotation__format__value_ranges[] = {
 {0, 0},{0, 3}
 };
-const ProtobufCEnumValueIndex annotation__format__enum_values_by_name[3] =
+const ProtobufCEnumValueIndex muse2__annotation__format__enum_values_by_name[3] =
 {
   { "JSON", 1 },
   { "OSC", 2 },
   { "PLAIN_STRING", 0 },
 };
-const ProtobufCEnumDescriptor annotation__format__descriptor =
+const ProtobufCEnumDescriptor muse2__annotation__format__descriptor =
 {
   PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
-  "Annotation.Format",
+  "muse2.Annotation.Format",
   "Format",
-  "Annotation__Format",
-  "",
+  "Muse2__Annotation__Format",
+  "muse2",
   3,
-  annotation__format__enum_values_by_number,
+  muse2__annotation__format__enum_values_by_number,
   3,
-  annotation__format__enum_values_by_name,
+  muse2__annotation__format__enum_values_by_name,
   1,
-  annotation__format__value_ranges,
+  muse2__annotation__format__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const Annotation__Format annotation__event_data_format__default_value = ANNOTATION__FORMAT__PLAIN_STRING;
-static const ProtobufCFieldDescriptor annotation__field_descriptors[5] =
+static const Muse2__Annotation__Format muse2__annotation__event_data_format__default_value = MUSE2__ANNOTATION__FORMAT__PLAIN_STRING;
+static const ProtobufCFieldDescriptor muse2__annotation__field_descriptors[5] =
 {
   {
     "event_data",
@@ -928,7 +928,7 @@ static const ProtobufCFieldDescriptor annotation__field_descriptors[5] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(Annotation, event_data),
+    offsetof(Muse2__Annotation, event_data),
     NULL,
     NULL,
     0,             /* flags */
@@ -939,10 +939,10 @@ static const ProtobufCFieldDescriptor annotation__field_descriptors[5] =
     2,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(Annotation, has_event_data_format),
-    offsetof(Annotation, event_data_format),
-    &annotation__format__descriptor,
-    &annotation__event_data_format__default_value,
+    offsetof(Muse2__Annotation, has_event_data_format),
+    offsetof(Muse2__Annotation, event_data_format),
+    &muse2__annotation__format__descriptor,
+    &muse2__annotation__event_data_format__default_value,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -952,7 +952,7 @@ static const ProtobufCFieldDescriptor annotation__field_descriptors[5] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(Annotation, event_type),
+    offsetof(Muse2__Annotation, event_type),
     NULL,
     NULL,
     0,             /* flags */
@@ -964,7 +964,7 @@ static const ProtobufCFieldDescriptor annotation__field_descriptors[5] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(Annotation, event_id),
+    offsetof(Muse2__Annotation, event_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -976,49 +976,49 @@ static const ProtobufCFieldDescriptor annotation__field_descriptors[5] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(Annotation, parent_id),
+    offsetof(Muse2__Annotation, parent_id),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned annotation__field_indices_by_name[] = {
+static const unsigned muse2__annotation__field_indices_by_name[] = {
   0,   /* field[0] = event_data */
   1,   /* field[1] = event_data_format */
   3,   /* field[3] = event_id */
   2,   /* field[2] = event_type */
   4,   /* field[4] = parent_id */
 };
-static const ProtobufCIntRange annotation__number_ranges[1 + 1] =
+static const ProtobufCIntRange muse2__annotation__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 5 }
 };
-const ProtobufCMessageDescriptor annotation__descriptor =
+const ProtobufCMessageDescriptor muse2__annotation__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "muse2.Annotation",
   "Annotation",
-  "Annotation",
-  "Annotation",
-  "",
-  sizeof(Annotation),
+  "Muse2__Annotation",
+  "muse2",
+  sizeof(Muse2__Annotation),
   5,
-  annotation__field_descriptors,
-  annotation__field_indices_by_name,
-  1,  annotation__number_ranges,
-  (ProtobufCMessageInit) annotation__init,
+  muse2__annotation__field_descriptors,
+  muse2__annotation__field_indices_by_name,
+  1,  muse2__annotation__number_ranges,
+  (ProtobufCMessageInit) muse2__annotation__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor battery__field_descriptors[4] =
+static const ProtobufCFieldDescriptor muse2__battery__field_descriptors[4] =
 {
   {
     "percent_remaining",
     1,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Battery, has_percent_remaining),
-    offsetof(Battery, percent_remaining),
+    offsetof(Muse2__Battery, has_percent_remaining),
+    offsetof(Muse2__Battery, percent_remaining),
     NULL,
     NULL,
     0,             /* flags */
@@ -1029,8 +1029,8 @@ static const ProtobufCFieldDescriptor battery__field_descriptors[4] =
     2,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Battery, has_battery_fuel_gauge_millivolts),
-    offsetof(Battery, battery_fuel_gauge_millivolts),
+    offsetof(Muse2__Battery, has_battery_fuel_gauge_millivolts),
+    offsetof(Muse2__Battery, battery_fuel_gauge_millivolts),
     NULL,
     NULL,
     0,             /* flags */
@@ -1041,8 +1041,8 @@ static const ProtobufCFieldDescriptor battery__field_descriptors[4] =
     3,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Battery, has_battery_adc_millivolts),
-    offsetof(Battery, battery_adc_millivolts),
+    offsetof(Muse2__Battery, has_battery_adc_millivolts),
+    offsetof(Muse2__Battery, battery_adc_millivolts),
     NULL,
     NULL,
     0,             /* flags */
@@ -1053,41 +1053,41 @@ static const ProtobufCFieldDescriptor battery__field_descriptors[4] =
     4,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_SINT32,
-    offsetof(Battery, has_temperature_celsius),
-    offsetof(Battery, temperature_celsius),
+    offsetof(Muse2__Battery, has_temperature_celsius),
+    offsetof(Muse2__Battery, temperature_celsius),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned battery__field_indices_by_name[] = {
+static const unsigned muse2__battery__field_indices_by_name[] = {
   2,   /* field[2] = battery_adc_millivolts */
   1,   /* field[1] = battery_fuel_gauge_millivolts */
   0,   /* field[0] = percent_remaining */
   3,   /* field[3] = temperature_celsius */
 };
-static const ProtobufCIntRange battery__number_ranges[1 + 1] =
+static const ProtobufCIntRange muse2__battery__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 4 }
 };
-const ProtobufCMessageDescriptor battery__descriptor =
+const ProtobufCMessageDescriptor muse2__battery__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "muse2.Battery",
   "Battery",
-  "Battery",
-  "Battery",
-  "",
-  sizeof(Battery),
+  "Muse2__Battery",
+  "muse2",
+  sizeof(Muse2__Battery),
   4,
-  battery__field_descriptors,
-  battery__field_indices_by_name,
-  1,  battery__number_ranges,
-  (ProtobufCMessageInit) battery__init,
+  muse2__battery__field_descriptors,
+  muse2__battery__field_indices_by_name,
+  1,  muse2__battery__number_ranges,
+  (ProtobufCMessageInit) muse2__battery__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor muse_version__field_descriptors[6] =
+static const ProtobufCFieldDescriptor muse2__version__field_descriptors[6] =
 {
   {
     "hardware_version",
@@ -1095,7 +1095,7 @@ static const ProtobufCFieldDescriptor muse_version__field_descriptors[6] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(MuseVersion, hardware_version),
+    offsetof(Muse2__Version, hardware_version),
     NULL,
     NULL,
     0,             /* flags */
@@ -1107,7 +1107,7 @@ static const ProtobufCFieldDescriptor muse_version__field_descriptors[6] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(MuseVersion, firmware_headset_version),
+    offsetof(Muse2__Version, firmware_headset_version),
     NULL,
     NULL,
     0,             /* flags */
@@ -1119,7 +1119,7 @@ static const ProtobufCFieldDescriptor muse_version__field_descriptors[6] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(MuseVersion, firmware_type),
+    offsetof(Muse2__Version, firmware_type),
     NULL,
     NULL,
     0,             /* flags */
@@ -1131,7 +1131,7 @@ static const ProtobufCFieldDescriptor muse_version__field_descriptors[6] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(MuseVersion, firmware_bootloader_version),
+    offsetof(Muse2__Version, firmware_bootloader_version),
     NULL,
     NULL,
     0,             /* flags */
@@ -1143,7 +1143,7 @@ static const ProtobufCFieldDescriptor muse_version__field_descriptors[6] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(MuseVersion, build_number),
+    offsetof(Muse2__Version, build_number),
     NULL,
     NULL,
     0,             /* flags */
@@ -1155,14 +1155,14 @@ static const ProtobufCFieldDescriptor muse_version__field_descriptors[6] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(MuseVersion, protocol_version),
+    offsetof(Muse2__Version, protocol_version),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned muse_version__field_indices_by_name[] = {
+static const unsigned muse2__version__field_indices_by_name[] = {
   4,   /* field[4] = build_number */
   3,   /* field[3] = firmware_bootloader_version */
   1,   /* field[1] = firmware_headset_version */
@@ -1170,27 +1170,27 @@ static const unsigned muse_version__field_indices_by_name[] = {
   0,   /* field[0] = hardware_version */
   5,   /* field[5] = protocol_version */
 };
-static const ProtobufCIntRange muse_version__number_ranges[1 + 1] =
+static const ProtobufCIntRange muse2__version__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 6 }
 };
-const ProtobufCMessageDescriptor muse_version__descriptor =
+const ProtobufCMessageDescriptor muse2__version__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "MuseVersion",
-  "MuseVersion",
-  "MuseVersion",
-  "",
-  sizeof(MuseVersion),
+  "muse2.Version",
+  "Version",
+  "Muse2__Version",
+  "muse2",
+  sizeof(Muse2__Version),
   6,
-  muse_version__field_descriptors,
-  muse_version__field_indices_by_name,
-  1,  muse_version__number_ranges,
-  (ProtobufCMessageInit) muse_version__init,
+  muse2__version__field_descriptors,
+  muse2__version__field_indices_by_name,
+  1,  muse2__version__number_ranges,
+  (ProtobufCMessageInit) muse2__version__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
+static const ProtobufCFieldDescriptor muse2__config__field_descriptors[27] =
 {
   {
     "mac_addr",
@@ -1198,7 +1198,7 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(MuseConfig, mac_addr),
+    offsetof(Muse2__Config, mac_addr),
     NULL,
     NULL,
     0,             /* flags */
@@ -1210,7 +1210,7 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(MuseConfig, serial_number),
+    offsetof(Muse2__Config, serial_number),
     NULL,
     NULL,
     0,             /* flags */
@@ -1222,7 +1222,7 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(MuseConfig, preset),
+    offsetof(Muse2__Config, preset),
     NULL,
     NULL,
     0,             /* flags */
@@ -1233,8 +1233,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     100,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(MuseConfig, has_compression_enabled),
-    offsetof(MuseConfig, compression_enabled),
+    offsetof(Muse2__Config, has_compression_enabled),
+    offsetof(Muse2__Config, compression_enabled),
     NULL,
     NULL,
     0,             /* flags */
@@ -1245,8 +1245,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     201,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(MuseConfig, has_filters_enabled),
-    offsetof(MuseConfig, filters_enabled),
+    offsetof(Muse2__Config, has_filters_enabled),
+    offsetof(Muse2__Config, filters_enabled),
     NULL,
     NULL,
     0,             /* flags */
@@ -1257,8 +1257,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     202,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(MuseConfig, has_notch_frequency_hz),
-    offsetof(MuseConfig, notch_frequency_hz),
+    offsetof(Muse2__Config, has_notch_frequency_hz),
+    offsetof(Muse2__Config, notch_frequency_hz),
     NULL,
     NULL,
     0,             /* flags */
@@ -1269,8 +1269,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     203,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(MuseConfig, has_eeg_sample_frequency_hz),
-    offsetof(MuseConfig, eeg_sample_frequency_hz),
+    offsetof(Muse2__Config, has_eeg_sample_frequency_hz),
+    offsetof(Muse2__Config, eeg_sample_frequency_hz),
     NULL,
     NULL,
     0,             /* flags */
@@ -1281,8 +1281,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     204,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(MuseConfig, has_eeg_output_frequency_hz),
-    offsetof(MuseConfig, eeg_output_frequency_hz),
+    offsetof(Muse2__Config, has_eeg_output_frequency_hz),
+    offsetof(Muse2__Config, eeg_output_frequency_hz),
     NULL,
     NULL,
     0,             /* flags */
@@ -1293,8 +1293,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     205,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(MuseConfig, has_eeg_samples_bitwidth),
-    offsetof(MuseConfig, eeg_samples_bitwidth),
+    offsetof(Muse2__Config, has_eeg_samples_bitwidth),
+    offsetof(Muse2__Config, eeg_samples_bitwidth),
     NULL,
     NULL,
     0,             /* flags */
@@ -1305,8 +1305,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     206,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(MuseConfig, has_eeg_channel_count),
-    offsetof(MuseConfig, eeg_channel_count),
+    offsetof(Muse2__Config, has_eeg_channel_count),
+    offsetof(Muse2__Config, eeg_channel_count),
     NULL,
     NULL,
     0,             /* flags */
@@ -1318,7 +1318,7 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(MuseConfig, eeg_channel_layout),
+    offsetof(Muse2__Config, eeg_channel_layout),
     NULL,
     NULL,
     0,             /* flags */
@@ -1329,8 +1329,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     208,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(MuseConfig, has_eeg_downsample),
-    offsetof(MuseConfig, eeg_downsample),
+    offsetof(Muse2__Config, has_eeg_downsample),
+    offsetof(Muse2__Config, eeg_downsample),
     NULL,
     NULL,
     0,             /* flags */
@@ -1341,9 +1341,9 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     209,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(MuseConfig, has_eeg_units),
-    offsetof(MuseConfig, eeg_units),
-    &eegunits__descriptor,
+    offsetof(Muse2__Config, has_eeg_units),
+    offsetof(Muse2__Config, eeg_units),
+    &muse2__eegunits__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1353,9 +1353,9 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     210,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(MuseConfig, n_eeg_locations),
-    offsetof(MuseConfig, eeg_locations),
-    &head_locations__descriptor,
+    offsetof(Muse2__Config, n_eeg_locations),
+    offsetof(Muse2__Config, eeg_locations),
+    &muse2__head_locations__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1365,8 +1365,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     211,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(MuseConfig, has_eeg_conversion_factor),
-    offsetof(MuseConfig, eeg_conversion_factor),
+    offsetof(Muse2__Config, has_eeg_conversion_factor),
+    offsetof(Muse2__Config, eeg_conversion_factor),
     NULL,
     NULL,
     0,             /* flags */
@@ -1377,8 +1377,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     212,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(MuseConfig, has_afe_gain),
-    offsetof(MuseConfig, afe_gain),
+    offsetof(Muse2__Config, has_afe_gain),
+    offsetof(Muse2__Config, afe_gain),
     NULL,
     NULL,
     0,             /* flags */
@@ -1389,8 +1389,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     300,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(MuseConfig, has_drlref_data_enabled),
-    offsetof(MuseConfig, drlref_data_enabled),
+    offsetof(Muse2__Config, has_drlref_data_enabled),
+    offsetof(Muse2__Config, drlref_data_enabled),
     NULL,
     NULL,
     0,             /* flags */
@@ -1401,8 +1401,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     301,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(MuseConfig, has_drlref_conversion_factor),
-    offsetof(MuseConfig, drlref_conversion_factor),
+    offsetof(Muse2__Config, has_drlref_conversion_factor),
+    offsetof(Muse2__Config, drlref_conversion_factor),
     NULL,
     NULL,
     0,             /* flags */
@@ -1413,8 +1413,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     302,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(MuseConfig, has_drlref_sample_frequency_hz),
-    offsetof(MuseConfig, drlref_sample_frequency_hz),
+    offsetof(Muse2__Config, has_drlref_sample_frequency_hz),
+    offsetof(Muse2__Config, drlref_sample_frequency_hz),
     NULL,
     NULL,
     0,             /* flags */
@@ -1425,8 +1425,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     400,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(MuseConfig, has_acc_data_enabled),
-    offsetof(MuseConfig, acc_data_enabled),
+    offsetof(Muse2__Config, has_acc_data_enabled),
+    offsetof(Muse2__Config, acc_data_enabled),
     NULL,
     NULL,
     0,             /* flags */
@@ -1437,9 +1437,9 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     401,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(MuseConfig, has_acc_units),
-    offsetof(MuseConfig, acc_units),
-    &accelerometer_units__descriptor,
+    offsetof(Muse2__Config, has_acc_units),
+    offsetof(Muse2__Config, acc_units),
+    &muse2__accelerometer_units__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1449,8 +1449,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     402,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(MuseConfig, has_acc_conversion_factor),
-    offsetof(MuseConfig, acc_conversion_factor),
+    offsetof(Muse2__Config, has_acc_conversion_factor),
+    offsetof(Muse2__Config, acc_conversion_factor),
     NULL,
     NULL,
     0,             /* flags */
@@ -1461,8 +1461,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     403,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(MuseConfig, has_acc_sample_frequency_hz),
-    offsetof(MuseConfig, acc_sample_frequency_hz),
+    offsetof(Muse2__Config, has_acc_sample_frequency_hz),
+    offsetof(Muse2__Config, acc_sample_frequency_hz),
     NULL,
     NULL,
     0,             /* flags */
@@ -1473,8 +1473,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     500,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(MuseConfig, has_battery_data_enabled),
-    offsetof(MuseConfig, battery_data_enabled),
+    offsetof(Muse2__Config, has_battery_data_enabled),
+    offsetof(Muse2__Config, battery_data_enabled),
     NULL,
     NULL,
     0,             /* flags */
@@ -1485,8 +1485,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     501,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(MuseConfig, has_battery_percent_remaining),
-    offsetof(MuseConfig, battery_percent_remaining),
+    offsetof(Muse2__Config, has_battery_percent_remaining),
+    offsetof(Muse2__Config, battery_percent_remaining),
     NULL,
     NULL,
     0,             /* flags */
@@ -1497,8 +1497,8 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     502,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(MuseConfig, has_battery_millivolts),
-    offsetof(MuseConfig, battery_millivolts),
+    offsetof(Muse2__Config, has_battery_millivolts),
+    offsetof(Muse2__Config, battery_millivolts),
     NULL,
     NULL,
     0,             /* flags */
@@ -1509,15 +1509,15 @@ static const ProtobufCFieldDescriptor muse_config__field_descriptors[27] =
     600,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(MuseConfig, has_error_data_enabled),
-    offsetof(MuseConfig, error_data_enabled),
+    offsetof(Muse2__Config, has_error_data_enabled),
+    offsetof(Muse2__Config, error_data_enabled),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned muse_config__field_indices_by_name[] = {
+static const unsigned muse2__config__field_indices_by_name[] = {
   21,   /* field[21] = acc_conversion_factor */
   19,   /* field[19] = acc_data_enabled */
   22,   /* field[22] = acc_sample_frequency_hz */
@@ -1546,7 +1546,7 @@ static const unsigned muse_config__field_indices_by_name[] = {
   2,   /* field[2] = preset */
   1,   /* field[1] = serial_number */
 };
-static const ProtobufCIntRange muse_config__number_ranges[7 + 1] =
+static const ProtobufCIntRange muse2__config__number_ranges[7 + 1] =
 {
   { 1, 0 },
   { 100, 3 },
@@ -1557,98 +1557,98 @@ static const ProtobufCIntRange muse_config__number_ranges[7 + 1] =
   { 600, 26 },
   { 0, 27 }
 };
-const ProtobufCMessageDescriptor muse_config__descriptor =
+const ProtobufCMessageDescriptor muse2__config__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "MuseConfig",
-  "MuseConfig",
-  "MuseConfig",
-  "",
-  sizeof(MuseConfig),
+  "muse2.Config",
+  "Config",
+  "Muse2__Config",
+  "muse2",
+  sizeof(Muse2__Config),
   27,
-  muse_config__field_descriptors,
-  muse_config__field_indices_by_name,
-  7,  muse_config__number_ranges,
-  (ProtobufCMessageInit) muse_config__init,
+  muse2__config__field_descriptors,
+  muse2__config__field_indices_by_name,
+  7,  muse2__config__number_ranges,
+  (ProtobufCMessageInit) muse2__config__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor eeg__dropped_samples__field_descriptors[1] =
+static const ProtobufCFieldDescriptor muse2__eeg__dropped_samples__field_descriptors[1] =
 {
   {
     "num",
     1,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(EEGDroppedSamples, has_num),
-    offsetof(EEGDroppedSamples, num),
+    offsetof(Muse2__EEGDroppedSamples, has_num),
+    offsetof(Muse2__EEGDroppedSamples, num),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned eeg__dropped_samples__field_indices_by_name[] = {
+static const unsigned muse2__eeg__dropped_samples__field_indices_by_name[] = {
   0,   /* field[0] = num */
 };
-static const ProtobufCIntRange eeg__dropped_samples__number_ranges[1 + 1] =
+static const ProtobufCIntRange muse2__eeg__dropped_samples__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor eeg__dropped_samples__descriptor =
+const ProtobufCMessageDescriptor muse2__eeg__dropped_samples__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "EEG_DroppedSamples",
+  "muse2.EEG_DroppedSamples",
   "EEGDroppedSamples",
-  "EEGDroppedSamples",
-  "",
-  sizeof(EEGDroppedSamples),
+  "Muse2__EEGDroppedSamples",
+  "muse2",
+  sizeof(Muse2__EEGDroppedSamples),
   1,
-  eeg__dropped_samples__field_descriptors,
-  eeg__dropped_samples__field_indices_by_name,
-  1,  eeg__dropped_samples__number_ranges,
-  (ProtobufCMessageInit) eeg__dropped_samples__init,
+  muse2__eeg__dropped_samples__field_descriptors,
+  muse2__eeg__dropped_samples__field_indices_by_name,
+  1,  muse2__eeg__dropped_samples__number_ranges,
+  (ProtobufCMessageInit) muse2__eeg__dropped_samples__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor acc__dropped_samples__field_descriptors[1] =
+static const ProtobufCFieldDescriptor muse2__acc__dropped_samples__field_descriptors[1] =
 {
   {
     "num",
     1,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(ACCDroppedSamples, has_num),
-    offsetof(ACCDroppedSamples, num),
+    offsetof(Muse2__ACCDroppedSamples, has_num),
+    offsetof(Muse2__ACCDroppedSamples, num),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned acc__dropped_samples__field_indices_by_name[] = {
+static const unsigned muse2__acc__dropped_samples__field_indices_by_name[] = {
   0,   /* field[0] = num */
 };
-static const ProtobufCIntRange acc__dropped_samples__number_ranges[1 + 1] =
+static const ProtobufCIntRange muse2__acc__dropped_samples__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor acc__dropped_samples__descriptor =
+const ProtobufCMessageDescriptor muse2__acc__dropped_samples__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "ACC_DroppedSamples",
+  "muse2.ACC_DroppedSamples",
   "ACCDroppedSamples",
-  "ACCDroppedSamples",
-  "",
-  sizeof(ACCDroppedSamples),
+  "Muse2__ACCDroppedSamples",
+  "muse2",
+  sizeof(Muse2__ACCDroppedSamples),
   1,
-  acc__dropped_samples__field_descriptors,
-  acc__dropped_samples__field_indices_by_name,
-  1,  acc__dropped_samples__number_ranges,
-  (ProtobufCMessageInit) acc__dropped_samples__init,
+  muse2__acc__dropped_samples__field_descriptors,
+  muse2__acc__dropped_samples__field_indices_by_name,
+  1,  muse2__acc__dropped_samples__number_ranges,
+  (ProtobufCMessageInit) muse2__acc__dropped_samples__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor computing_device__field_descriptors[11] =
+static const ProtobufCFieldDescriptor muse2__computing_device__field_descriptors[11] =
 {
   {
     "os_type",
@@ -1656,7 +1656,7 @@ static const ProtobufCFieldDescriptor computing_device__field_descriptors[11] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(ComputingDevice, os_type),
+    offsetof(Muse2__ComputingDevice, os_type),
     NULL,
     NULL,
     0,             /* flags */
@@ -1668,7 +1668,7 @@ static const ProtobufCFieldDescriptor computing_device__field_descriptors[11] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(ComputingDevice, os_version),
+    offsetof(Muse2__ComputingDevice, os_version),
     NULL,
     NULL,
     0,             /* flags */
@@ -1680,7 +1680,7 @@ static const ProtobufCFieldDescriptor computing_device__field_descriptors[11] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(ComputingDevice, hardware_model_name),
+    offsetof(Muse2__ComputingDevice, hardware_model_name),
     NULL,
     NULL,
     0,             /* flags */
@@ -1692,7 +1692,7 @@ static const ProtobufCFieldDescriptor computing_device__field_descriptors[11] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(ComputingDevice, hardware_model_id),
+    offsetof(Muse2__ComputingDevice, hardware_model_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -1704,7 +1704,7 @@ static const ProtobufCFieldDescriptor computing_device__field_descriptors[11] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(ComputingDevice, processor_name),
+    offsetof(Muse2__ComputingDevice, processor_name),
     NULL,
     NULL,
     0,             /* flags */
@@ -1716,7 +1716,7 @@ static const ProtobufCFieldDescriptor computing_device__field_descriptors[11] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(ComputingDevice, processor_speed),
+    offsetof(Muse2__ComputingDevice, processor_speed),
     NULL,
     NULL,
     0,             /* flags */
@@ -1727,8 +1727,8 @@ static const ProtobufCFieldDescriptor computing_device__field_descriptors[11] =
     7,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(ComputingDevice, has_number_of_processors),
-    offsetof(ComputingDevice, number_of_processors),
+    offsetof(Muse2__ComputingDevice, has_number_of_processors),
+    offsetof(Muse2__ComputingDevice, number_of_processors),
     NULL,
     NULL,
     0,             /* flags */
@@ -1740,7 +1740,7 @@ static const ProtobufCFieldDescriptor computing_device__field_descriptors[11] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(ComputingDevice, memory_size),
+    offsetof(Muse2__ComputingDevice, memory_size),
     NULL,
     NULL,
     0,             /* flags */
@@ -1752,7 +1752,7 @@ static const ProtobufCFieldDescriptor computing_device__field_descriptors[11] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(ComputingDevice, bluetooth_version),
+    offsetof(Muse2__ComputingDevice, bluetooth_version),
     NULL,
     NULL,
     0,             /* flags */
@@ -1764,7 +1764,7 @@ static const ProtobufCFieldDescriptor computing_device__field_descriptors[11] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(ComputingDevice, time_zone),
+    offsetof(Muse2__ComputingDevice, time_zone),
     NULL,
     NULL,
     0,             /* flags */
@@ -1775,15 +1775,15 @@ static const ProtobufCFieldDescriptor computing_device__field_descriptors[11] =
     11,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_SINT32,
-    offsetof(ComputingDevice, has_time_zone_offset_seconds),
-    offsetof(ComputingDevice, time_zone_offset_seconds),
+    offsetof(Muse2__ComputingDevice, has_time_zone_offset_seconds),
+    offsetof(Muse2__ComputingDevice, time_zone_offset_seconds),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned computing_device__field_indices_by_name[] = {
+static const unsigned muse2__computing_device__field_indices_by_name[] = {
   8,   /* field[8] = bluetooth_version */
   3,   /* field[3] = hardware_model_id */
   2,   /* field[2] = hardware_model_name */
@@ -1796,27 +1796,27 @@ static const unsigned computing_device__field_indices_by_name[] = {
   9,   /* field[9] = time_zone */
   10,   /* field[10] = time_zone_offset_seconds */
 };
-static const ProtobufCIntRange computing_device__number_ranges[1 + 1] =
+static const ProtobufCIntRange muse2__computing_device__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 11 }
 };
-const ProtobufCMessageDescriptor computing_device__descriptor =
+const ProtobufCMessageDescriptor muse2__computing_device__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "muse2.ComputingDevice",
   "ComputingDevice",
-  "ComputingDevice",
-  "ComputingDevice",
-  "",
-  sizeof(ComputingDevice),
+  "Muse2__ComputingDevice",
+  "muse2",
+  sizeof(Muse2__ComputingDevice),
   11,
-  computing_device__field_descriptors,
-  computing_device__field_indices_by_name,
-  1,  computing_device__number_ranges,
-  (ProtobufCMessageInit) computing_device__init,
+  muse2__computing_device__field_descriptors,
+  muse2__computing_device__field_indices_by_name,
+  1,  muse2__computing_device__number_ranges,
+  (ProtobufCMessageInit) muse2__computing_device__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor dsp__field_descriptors[4] =
+static const ProtobufCFieldDescriptor muse2__dsp__field_descriptors[4] =
 {
   {
     "type",
@@ -1824,7 +1824,7 @@ static const ProtobufCFieldDescriptor dsp__field_descriptors[4] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(DSP, type),
+    offsetof(Muse2__DSP, type),
     NULL,
     NULL,
     0,             /* flags */
@@ -1835,8 +1835,8 @@ static const ProtobufCFieldDescriptor dsp__field_descriptors[4] =
     2,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(DSP, n_float_array),
-    offsetof(DSP, float_array),
+    offsetof(Muse2__DSP, n_float_array),
+    offsetof(Muse2__DSP, float_array),
     NULL,
     NULL,
     0,             /* flags */
@@ -1847,8 +1847,8 @@ static const ProtobufCFieldDescriptor dsp__field_descriptors[4] =
     3,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(DSP, n_int_array),
-    offsetof(DSP, int_array),
+    offsetof(Muse2__DSP, n_int_array),
+    offsetof(Muse2__DSP, int_array),
     NULL,
     NULL,
     0,             /* flags */
@@ -1860,127 +1860,127 @@ static const ProtobufCFieldDescriptor dsp__field_descriptors[4] =
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(DSP, version),
+    offsetof(Muse2__DSP, version),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned dsp__field_indices_by_name[] = {
+static const unsigned muse2__dsp__field_indices_by_name[] = {
   1,   /* field[1] = float_array */
   2,   /* field[2] = int_array */
   0,   /* field[0] = type */
   3,   /* field[3] = version */
 };
-static const ProtobufCIntRange dsp__number_ranges[1 + 1] =
+static const ProtobufCIntRange muse2__dsp__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 4 }
 };
-const ProtobufCMessageDescriptor dsp__descriptor =
+const ProtobufCMessageDescriptor muse2__dsp__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "muse2.DSP",
   "DSP",
-  "DSP",
-  "DSP",
-  "",
-  sizeof(DSP),
+  "Muse2__DSP",
+  "muse2",
+  sizeof(Muse2__DSP),
   4,
-  dsp__field_descriptors,
-  dsp__field_indices_by_name,
-  1,  dsp__number_ranges,
-  (ProtobufCMessageInit) dsp__init,
+  muse2__dsp__field_descriptors,
+  muse2__dsp__field_indices_by_name,
+  1,  muse2__dsp__number_ranges,
+  (ProtobufCMessageInit) muse2__dsp__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-const ProtobufCEnumValue head_locations__enum_values_by_number[81] =
+const ProtobufCEnumValue muse2__head_locations__enum_values_by_number[81] =
 {
-  { "NZ", "HEAD_LOCATIONS__NZ", 1 },
-  { "FP1", "HEAD_LOCATIONS__FP1", 2 },
-  { "FPZ", "HEAD_LOCATIONS__FPZ", 3 },
-  { "FP2", "HEAD_LOCATIONS__FP2", 4 },
-  { "AF7", "HEAD_LOCATIONS__AF7", 5 },
-  { "AF3", "HEAD_LOCATIONS__AF3", 6 },
-  { "AFZ", "HEAD_LOCATIONS__AFZ", 7 },
-  { "AF4", "HEAD_LOCATIONS__AF4", 8 },
-  { "AF8", "HEAD_LOCATIONS__AF8", 9 },
-  { "F9", "HEAD_LOCATIONS__F9", 10 },
-  { "F7", "HEAD_LOCATIONS__F7", 11 },
-  { "F5", "HEAD_LOCATIONS__F5", 12 },
-  { "F3", "HEAD_LOCATIONS__F3", 13 },
-  { "F1", "HEAD_LOCATIONS__F1", 14 },
-  { "FZ", "HEAD_LOCATIONS__FZ", 15 },
-  { "F2", "HEAD_LOCATIONS__F2", 16 },
-  { "F4", "HEAD_LOCATIONS__F4", 17 },
-  { "F6", "HEAD_LOCATIONS__F6", 18 },
-  { "F8", "HEAD_LOCATIONS__F8", 19 },
-  { "F10", "HEAD_LOCATIONS__F10", 20 },
-  { "FT9", "HEAD_LOCATIONS__FT9", 21 },
-  { "FT7", "HEAD_LOCATIONS__FT7", 22 },
-  { "FC5", "HEAD_LOCATIONS__FC5", 23 },
-  { "FC3", "HEAD_LOCATIONS__FC3", 24 },
-  { "FC1", "HEAD_LOCATIONS__FC1", 25 },
-  { "FCZ", "HEAD_LOCATIONS__FCZ", 26 },
-  { "FC2", "HEAD_LOCATIONS__FC2", 27 },
-  { "FC4", "HEAD_LOCATIONS__FC4", 28 },
-  { "FC6", "HEAD_LOCATIONS__FC6", 29 },
-  { "FT8", "HEAD_LOCATIONS__FT8", 30 },
-  { "FT10", "HEAD_LOCATIONS__FT10", 31 },
-  { "A1", "HEAD_LOCATIONS__A1", 32 },
-  { "T9", "HEAD_LOCATIONS__T9", 33 },
-  { "T7", "HEAD_LOCATIONS__T7", 34 },
-  { "C5", "HEAD_LOCATIONS__C5", 35 },
-  { "C3", "HEAD_LOCATIONS__C3", 36 },
-  { "C1", "HEAD_LOCATIONS__C1", 37 },
-  { "CZ", "HEAD_LOCATIONS__CZ", 38 },
-  { "C2", "HEAD_LOCATIONS__C2", 39 },
-  { "C4", "HEAD_LOCATIONS__C4", 40 },
-  { "C6", "HEAD_LOCATIONS__C6", 41 },
-  { "T8", "HEAD_LOCATIONS__T8", 42 },
-  { "T10", "HEAD_LOCATIONS__T10", 43 },
-  { "A2", "HEAD_LOCATIONS__A2", 44 },
-  { "TP9", "HEAD_LOCATIONS__TP9", 45 },
-  { "TP7", "HEAD_LOCATIONS__TP7", 46 },
-  { "CP5", "HEAD_LOCATIONS__CP5", 47 },
-  { "CP3", "HEAD_LOCATIONS__CP3", 48 },
-  { "CP1", "HEAD_LOCATIONS__CP1", 49 },
-  { "CPZ", "HEAD_LOCATIONS__CPZ", 50 },
-  { "CP2", "HEAD_LOCATIONS__CP2", 51 },
-  { "CP4", "HEAD_LOCATIONS__CP4", 52 },
-  { "CP6", "HEAD_LOCATIONS__CP6", 53 },
-  { "TP8", "HEAD_LOCATIONS__TP8", 54 },
-  { "TP10", "HEAD_LOCATIONS__TP10", 55 },
-  { "P9", "HEAD_LOCATIONS__P9", 56 },
-  { "P7", "HEAD_LOCATIONS__P7", 57 },
-  { "P5", "HEAD_LOCATIONS__P5", 58 },
-  { "P3", "HEAD_LOCATIONS__P3", 59 },
-  { "P1", "HEAD_LOCATIONS__P1", 60 },
-  { "PZ", "HEAD_LOCATIONS__PZ", 61 },
-  { "P2", "HEAD_LOCATIONS__P2", 62 },
-  { "P4", "HEAD_LOCATIONS__P4", 63 },
-  { "P6", "HEAD_LOCATIONS__P6", 64 },
-  { "P8", "HEAD_LOCATIONS__P8", 65 },
-  { "P10", "HEAD_LOCATIONS__P10", 66 },
-  { "PO7", "HEAD_LOCATIONS__PO7", 67 },
-  { "PO3", "HEAD_LOCATIONS__PO3", 68 },
-  { "POZ", "HEAD_LOCATIONS__POZ", 69 },
-  { "PO4", "HEAD_LOCATIONS__PO4", 70 },
-  { "PO8", "HEAD_LOCATIONS__PO8", 71 },
-  { "O1", "HEAD_LOCATIONS__O1", 72 },
-  { "OZ", "HEAD_LOCATIONS__OZ", 73 },
-  { "O2", "HEAD_LOCATIONS__O2", 74 },
-  { "IZ", "HEAD_LOCATIONS__IZ", 75 },
-  { "AUX1", "HEAD_LOCATIONS__AUX1", 76 },
-  { "AUX2", "HEAD_LOCATIONS__AUX2", 77 },
-  { "AUX3", "HEAD_LOCATIONS__AUX3", 78 },
-  { "AUX4", "HEAD_LOCATIONS__AUX4", 79 },
-  { "MUSE_LEFT_AUX", "HEAD_LOCATIONS__MUSE_LEFT_AUX", 80 },
-  { "MUSE_RIGHT_AUX", "HEAD_LOCATIONS__MUSE_RIGHT_AUX", 81 },
+  { "NZ", "MUSE2__HEAD_LOCATIONS__NZ", 1 },
+  { "FP1", "MUSE2__HEAD_LOCATIONS__FP1", 2 },
+  { "FPZ", "MUSE2__HEAD_LOCATIONS__FPZ", 3 },
+  { "FP2", "MUSE2__HEAD_LOCATIONS__FP2", 4 },
+  { "AF7", "MUSE2__HEAD_LOCATIONS__AF7", 5 },
+  { "AF3", "MUSE2__HEAD_LOCATIONS__AF3", 6 },
+  { "AFZ", "MUSE2__HEAD_LOCATIONS__AFZ", 7 },
+  { "AF4", "MUSE2__HEAD_LOCATIONS__AF4", 8 },
+  { "AF8", "MUSE2__HEAD_LOCATIONS__AF8", 9 },
+  { "F9", "MUSE2__HEAD_LOCATIONS__F9", 10 },
+  { "F7", "MUSE2__HEAD_LOCATIONS__F7", 11 },
+  { "F5", "MUSE2__HEAD_LOCATIONS__F5", 12 },
+  { "F3", "MUSE2__HEAD_LOCATIONS__F3", 13 },
+  { "F1", "MUSE2__HEAD_LOCATIONS__F1", 14 },
+  { "FZ", "MUSE2__HEAD_LOCATIONS__FZ", 15 },
+  { "F2", "MUSE2__HEAD_LOCATIONS__F2", 16 },
+  { "F4", "MUSE2__HEAD_LOCATIONS__F4", 17 },
+  { "F6", "MUSE2__HEAD_LOCATIONS__F6", 18 },
+  { "F8", "MUSE2__HEAD_LOCATIONS__F8", 19 },
+  { "F10", "MUSE2__HEAD_LOCATIONS__F10", 20 },
+  { "FT9", "MUSE2__HEAD_LOCATIONS__FT9", 21 },
+  { "FT7", "MUSE2__HEAD_LOCATIONS__FT7", 22 },
+  { "FC5", "MUSE2__HEAD_LOCATIONS__FC5", 23 },
+  { "FC3", "MUSE2__HEAD_LOCATIONS__FC3", 24 },
+  { "FC1", "MUSE2__HEAD_LOCATIONS__FC1", 25 },
+  { "FCZ", "MUSE2__HEAD_LOCATIONS__FCZ", 26 },
+  { "FC2", "MUSE2__HEAD_LOCATIONS__FC2", 27 },
+  { "FC4", "MUSE2__HEAD_LOCATIONS__FC4", 28 },
+  { "FC6", "MUSE2__HEAD_LOCATIONS__FC6", 29 },
+  { "FT8", "MUSE2__HEAD_LOCATIONS__FT8", 30 },
+  { "FT10", "MUSE2__HEAD_LOCATIONS__FT10", 31 },
+  { "A1", "MUSE2__HEAD_LOCATIONS__A1", 32 },
+  { "T9", "MUSE2__HEAD_LOCATIONS__T9", 33 },
+  { "T7", "MUSE2__HEAD_LOCATIONS__T7", 34 },
+  { "C5", "MUSE2__HEAD_LOCATIONS__C5", 35 },
+  { "C3", "MUSE2__HEAD_LOCATIONS__C3", 36 },
+  { "C1", "MUSE2__HEAD_LOCATIONS__C1", 37 },
+  { "CZ", "MUSE2__HEAD_LOCATIONS__CZ", 38 },
+  { "C2", "MUSE2__HEAD_LOCATIONS__C2", 39 },
+  { "C4", "MUSE2__HEAD_LOCATIONS__C4", 40 },
+  { "C6", "MUSE2__HEAD_LOCATIONS__C6", 41 },
+  { "T8", "MUSE2__HEAD_LOCATIONS__T8", 42 },
+  { "T10", "MUSE2__HEAD_LOCATIONS__T10", 43 },
+  { "A2", "MUSE2__HEAD_LOCATIONS__A2", 44 },
+  { "TP9", "MUSE2__HEAD_LOCATIONS__TP9", 45 },
+  { "TP7", "MUSE2__HEAD_LOCATIONS__TP7", 46 },
+  { "CP5", "MUSE2__HEAD_LOCATIONS__CP5", 47 },
+  { "CP3", "MUSE2__HEAD_LOCATIONS__CP3", 48 },
+  { "CP1", "MUSE2__HEAD_LOCATIONS__CP1", 49 },
+  { "CPZ", "MUSE2__HEAD_LOCATIONS__CPZ", 50 },
+  { "CP2", "MUSE2__HEAD_LOCATIONS__CP2", 51 },
+  { "CP4", "MUSE2__HEAD_LOCATIONS__CP4", 52 },
+  { "CP6", "MUSE2__HEAD_LOCATIONS__CP6", 53 },
+  { "TP8", "MUSE2__HEAD_LOCATIONS__TP8", 54 },
+  { "TP10", "MUSE2__HEAD_LOCATIONS__TP10", 55 },
+  { "P9", "MUSE2__HEAD_LOCATIONS__P9", 56 },
+  { "P7", "MUSE2__HEAD_LOCATIONS__P7", 57 },
+  { "P5", "MUSE2__HEAD_LOCATIONS__P5", 58 },
+  { "P3", "MUSE2__HEAD_LOCATIONS__P3", 59 },
+  { "P1", "MUSE2__HEAD_LOCATIONS__P1", 60 },
+  { "PZ", "MUSE2__HEAD_LOCATIONS__PZ", 61 },
+  { "P2", "MUSE2__HEAD_LOCATIONS__P2", 62 },
+  { "P4", "MUSE2__HEAD_LOCATIONS__P4", 63 },
+  { "P6", "MUSE2__HEAD_LOCATIONS__P6", 64 },
+  { "P8", "MUSE2__HEAD_LOCATIONS__P8", 65 },
+  { "P10", "MUSE2__HEAD_LOCATIONS__P10", 66 },
+  { "PO7", "MUSE2__HEAD_LOCATIONS__PO7", 67 },
+  { "PO3", "MUSE2__HEAD_LOCATIONS__PO3", 68 },
+  { "POZ", "MUSE2__HEAD_LOCATIONS__POZ", 69 },
+  { "PO4", "MUSE2__HEAD_LOCATIONS__PO4", 70 },
+  { "PO8", "MUSE2__HEAD_LOCATIONS__PO8", 71 },
+  { "O1", "MUSE2__HEAD_LOCATIONS__O1", 72 },
+  { "OZ", "MUSE2__HEAD_LOCATIONS__OZ", 73 },
+  { "O2", "MUSE2__HEAD_LOCATIONS__O2", 74 },
+  { "IZ", "MUSE2__HEAD_LOCATIONS__IZ", 75 },
+  { "AUX1", "MUSE2__HEAD_LOCATIONS__AUX1", 76 },
+  { "AUX2", "MUSE2__HEAD_LOCATIONS__AUX2", 77 },
+  { "AUX3", "MUSE2__HEAD_LOCATIONS__AUX3", 78 },
+  { "AUX4", "MUSE2__HEAD_LOCATIONS__AUX4", 79 },
+  { "MUSE_LEFT_AUX", "MUSE2__HEAD_LOCATIONS__MUSE_LEFT_AUX", 80 },
+  { "MUSE_RIGHT_AUX", "MUSE2__HEAD_LOCATIONS__MUSE_RIGHT_AUX", 81 },
 };
-static const ProtobufCIntRange head_locations__value_ranges[] = {
+static const ProtobufCIntRange muse2__head_locations__value_ranges[] = {
 {1, 0},{0, 81}
 };
-const ProtobufCEnumValueIndex head_locations__enum_values_by_name[81] =
+const ProtobufCEnumValueIndex muse2__head_locations__enum_values_by_name[81] =
 {
   { "A1", 31 },
   { "A2", 43 },
@@ -2064,74 +2064,74 @@ const ProtobufCEnumValueIndex head_locations__enum_values_by_name[81] =
   { "TP8", 53 },
   { "TP9", 44 },
 };
-const ProtobufCEnumDescriptor head_locations__descriptor =
+const ProtobufCEnumDescriptor muse2__head_locations__descriptor =
 {
   PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
+  "muse2.HeadLocations",
   "HeadLocations",
-  "HeadLocations",
-  "HeadLocations",
-  "",
+  "Muse2__HeadLocations",
+  "muse2",
   81,
-  head_locations__enum_values_by_number,
+  muse2__head_locations__enum_values_by_number,
   81,
-  head_locations__enum_values_by_name,
+  muse2__head_locations__enum_values_by_name,
   1,
-  head_locations__value_ranges,
+  muse2__head_locations__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-const ProtobufCEnumValue eegunits__enum_values_by_number[2] =
+const ProtobufCEnumValue muse2__eegunits__enum_values_by_number[2] =
 {
-  { "EEG_MICROVOLTS", "EEGUNITS__EEG_MICROVOLTS", 1 },
-  { "EEG_MUSE1_RAW", "EEGUNITS__EEG_MUSE1_RAW", 2 },
+  { "EEG_MICROVOLTS", "MUSE2__EEGUNITS__EEG_MICROVOLTS", 1 },
+  { "EEG_MUSE1_RAW", "MUSE2__EEGUNITS__EEG_MUSE1_RAW", 2 },
 };
-static const ProtobufCIntRange eegunits__value_ranges[] = {
+static const ProtobufCIntRange muse2__eegunits__value_ranges[] = {
 {1, 0},{0, 2}
 };
-const ProtobufCEnumValueIndex eegunits__enum_values_by_name[2] =
+const ProtobufCEnumValueIndex muse2__eegunits__enum_values_by_name[2] =
 {
   { "EEG_MICROVOLTS", 0 },
   { "EEG_MUSE1_RAW", 1 },
 };
-const ProtobufCEnumDescriptor eegunits__descriptor =
+const ProtobufCEnumDescriptor muse2__eegunits__descriptor =
 {
   PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
+  "muse2.EEGUnits",
   "EEGUnits",
-  "EEGUnits",
-  "EEGUnits",
-  "",
+  "Muse2__EEGUnits",
+  "muse2",
   2,
-  eegunits__enum_values_by_number,
+  muse2__eegunits__enum_values_by_number,
   2,
-  eegunits__enum_values_by_name,
+  muse2__eegunits__enum_values_by_name,
   1,
-  eegunits__value_ranges,
+  muse2__eegunits__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-const ProtobufCEnumValue accelerometer_units__enum_values_by_number[2] =
+const ProtobufCEnumValue muse2__accelerometer_units__enum_values_by_number[2] =
 {
-  { "ACC_GFORCE", "ACCELEROMETER_UNITS__ACC_GFORCE", 1 },
-  { "ACC_MUSE1_RAW", "ACCELEROMETER_UNITS__ACC_MUSE1_RAW", 2 },
+  { "ACC_GFORCE", "MUSE2__ACCELEROMETER_UNITS__ACC_GFORCE", 1 },
+  { "ACC_MUSE1_RAW", "MUSE2__ACCELEROMETER_UNITS__ACC_MUSE1_RAW", 2 },
 };
-static const ProtobufCIntRange accelerometer_units__value_ranges[] = {
+static const ProtobufCIntRange muse2__accelerometer_units__value_ranges[] = {
 {1, 0},{0, 2}
 };
-const ProtobufCEnumValueIndex accelerometer_units__enum_values_by_name[2] =
+const ProtobufCEnumValueIndex muse2__accelerometer_units__enum_values_by_name[2] =
 {
   { "ACC_GFORCE", 0 },
   { "ACC_MUSE1_RAW", 1 },
 };
-const ProtobufCEnumDescriptor accelerometer_units__descriptor =
+const ProtobufCEnumDescriptor muse2__accelerometer_units__descriptor =
 {
   PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
+  "muse2.AccelerometerUnits",
   "AccelerometerUnits",
-  "AccelerometerUnits",
-  "AccelerometerUnits",
-  "",
+  "Muse2__AccelerometerUnits",
+  "muse2",
   2,
-  accelerometer_units__enum_values_by_number,
+  muse2__accelerometer_units__enum_values_by_number,
   2,
-  accelerometer_units__enum_values_by_name,
+  muse2__accelerometer_units__enum_values_by_name,
   1,
-  accelerometer_units__value_ranges,
+  muse2__accelerometer_units__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };

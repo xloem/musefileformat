@@ -15,169 +15,169 @@ PROTOBUF_C__BEGIN_DECLS
 #endif
 
 
-typedef struct _MuseDataCollection MuseDataCollection;
-typedef struct _MuseData MuseData;
-typedef struct _EEG EEG;
-typedef struct _MuseQuantization MuseQuantization;
-typedef struct _Accelerometer Accelerometer;
-typedef struct _Annotation Annotation;
-typedef struct _Battery Battery;
-typedef struct _MuseVersion MuseVersion;
-typedef struct _MuseConfig MuseConfig;
-typedef struct _EEGDroppedSamples EEGDroppedSamples;
-typedef struct _ACCDroppedSamples ACCDroppedSamples;
-typedef struct _ComputingDevice ComputingDevice;
-typedef struct _DSP DSP;
+typedef struct _Muse2__DataCollection Muse2__DataCollection;
+typedef struct _Muse2__Data Muse2__Data;
+typedef struct _Muse2__EEG Muse2__EEG;
+typedef struct _Muse2__Quantization Muse2__Quantization;
+typedef struct _Muse2__Accelerometer Muse2__Accelerometer;
+typedef struct _Muse2__Annotation Muse2__Annotation;
+typedef struct _Muse2__Battery Muse2__Battery;
+typedef struct _Muse2__Version Muse2__Version;
+typedef struct _Muse2__Config Muse2__Config;
+typedef struct _Muse2__EEGDroppedSamples Muse2__EEGDroppedSamples;
+typedef struct _Muse2__ACCDroppedSamples Muse2__ACCDroppedSamples;
+typedef struct _Muse2__ComputingDevice Muse2__ComputingDevice;
+typedef struct _Muse2__DSP Muse2__DSP;
 
 
 /* --- enums --- */
 
-typedef enum _MuseData__Datatype {
-  MUSE_DATA__DATATYPE__EEG = 0,
-  MUSE_DATA__DATATYPE__QUANT = 1,
-  MUSE_DATA__DATATYPE__ACCEL = 2,
-  MUSE_DATA__DATATYPE__BATTERY = 3,
-  MUSE_DATA__DATATYPE__VERSION = 4,
-  MUSE_DATA__DATATYPE__CONFIG = 5,
-  MUSE_DATA__DATATYPE__ANNOTATION = 6,
-  MUSE_DATA__DATATYPE__HISTOGRAM = 7,
-  MUSE_DATA__DATATYPE__ALGVALUE = 8,
-  MUSE_DATA__DATATYPE__DSP = 9,
-  MUSE_DATA__DATATYPE__COMPUTING_DEVICE = 10,
-  MUSE_DATA__DATATYPE__EEG_DROPPED = 11,
-  MUSE_DATA__DATATYPE__ACC_DROPPED = 12,
-  MUSE_DATA__DATATYPE__CALM_APP = 13,
-  MUSE_DATA__DATATYPE__CALM_ALG = 14
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(MUSE_DATA__DATATYPE)
-} MuseData__Datatype;
-typedef enum _Annotation__Format {
-  ANNOTATION__FORMAT__PLAIN_STRING = 0,
-  ANNOTATION__FORMAT__JSON = 1,
-  ANNOTATION__FORMAT__OSC = 2
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(ANNOTATION__FORMAT)
-} Annotation__Format;
-typedef enum _HeadLocations {
-  HEAD_LOCATIONS__NZ = 1,
-  HEAD_LOCATIONS__FP1 = 2,
-  HEAD_LOCATIONS__FPZ = 3,
-  HEAD_LOCATIONS__FP2 = 4,
-  HEAD_LOCATIONS__AF7 = 5,
-  HEAD_LOCATIONS__AF3 = 6,
-  HEAD_LOCATIONS__AFZ = 7,
-  HEAD_LOCATIONS__AF4 = 8,
-  HEAD_LOCATIONS__AF8 = 9,
-  HEAD_LOCATIONS__F9 = 10,
-  HEAD_LOCATIONS__F7 = 11,
-  HEAD_LOCATIONS__F5 = 12,
-  HEAD_LOCATIONS__F3 = 13,
-  HEAD_LOCATIONS__F1 = 14,
-  HEAD_LOCATIONS__FZ = 15,
-  HEAD_LOCATIONS__F2 = 16,
-  HEAD_LOCATIONS__F4 = 17,
-  HEAD_LOCATIONS__F6 = 18,
-  HEAD_LOCATIONS__F8 = 19,
-  HEAD_LOCATIONS__F10 = 20,
-  HEAD_LOCATIONS__FT9 = 21,
-  HEAD_LOCATIONS__FT7 = 22,
-  HEAD_LOCATIONS__FC5 = 23,
-  HEAD_LOCATIONS__FC3 = 24,
-  HEAD_LOCATIONS__FC1 = 25,
-  HEAD_LOCATIONS__FCZ = 26,
-  HEAD_LOCATIONS__FC2 = 27,
-  HEAD_LOCATIONS__FC4 = 28,
-  HEAD_LOCATIONS__FC6 = 29,
-  HEAD_LOCATIONS__FT8 = 30,
-  HEAD_LOCATIONS__FT10 = 31,
-  HEAD_LOCATIONS__A1 = 32,
-  HEAD_LOCATIONS__T9 = 33,
-  HEAD_LOCATIONS__T7 = 34,
-  HEAD_LOCATIONS__C5 = 35,
-  HEAD_LOCATIONS__C3 = 36,
-  HEAD_LOCATIONS__C1 = 37,
-  HEAD_LOCATIONS__CZ = 38,
-  HEAD_LOCATIONS__C2 = 39,
-  HEAD_LOCATIONS__C4 = 40,
-  HEAD_LOCATIONS__C6 = 41,
-  HEAD_LOCATIONS__T8 = 42,
-  HEAD_LOCATIONS__T10 = 43,
-  HEAD_LOCATIONS__A2 = 44,
-  HEAD_LOCATIONS__TP9 = 45,
-  HEAD_LOCATIONS__TP7 = 46,
-  HEAD_LOCATIONS__CP5 = 47,
-  HEAD_LOCATIONS__CP3 = 48,
-  HEAD_LOCATIONS__CP1 = 49,
-  HEAD_LOCATIONS__CPZ = 50,
-  HEAD_LOCATIONS__CP2 = 51,
-  HEAD_LOCATIONS__CP4 = 52,
-  HEAD_LOCATIONS__CP6 = 53,
-  HEAD_LOCATIONS__TP8 = 54,
-  HEAD_LOCATIONS__TP10 = 55,
-  HEAD_LOCATIONS__P9 = 56,
-  HEAD_LOCATIONS__P7 = 57,
-  HEAD_LOCATIONS__P5 = 58,
-  HEAD_LOCATIONS__P3 = 59,
-  HEAD_LOCATIONS__P1 = 60,
-  HEAD_LOCATIONS__PZ = 61,
-  HEAD_LOCATIONS__P2 = 62,
-  HEAD_LOCATIONS__P4 = 63,
-  HEAD_LOCATIONS__P6 = 64,
-  HEAD_LOCATIONS__P8 = 65,
-  HEAD_LOCATIONS__P10 = 66,
-  HEAD_LOCATIONS__PO7 = 67,
-  HEAD_LOCATIONS__PO3 = 68,
-  HEAD_LOCATIONS__POZ = 69,
-  HEAD_LOCATIONS__PO4 = 70,
-  HEAD_LOCATIONS__PO8 = 71,
-  HEAD_LOCATIONS__O1 = 72,
-  HEAD_LOCATIONS__OZ = 73,
-  HEAD_LOCATIONS__O2 = 74,
-  HEAD_LOCATIONS__IZ = 75,
-  HEAD_LOCATIONS__AUX1 = 76,
-  HEAD_LOCATIONS__AUX2 = 77,
-  HEAD_LOCATIONS__AUX3 = 78,
-  HEAD_LOCATIONS__AUX4 = 79,
-  HEAD_LOCATIONS__MUSE_LEFT_AUX = 80,
-  HEAD_LOCATIONS__MUSE_RIGHT_AUX = 81
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(HEAD_LOCATIONS)
-} HeadLocations;
-typedef enum _EEGUnits {
-  EEGUNITS__EEG_MICROVOLTS = 1,
-  EEGUNITS__EEG_MUSE1_RAW = 2
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(EEGUNITS)
-} EEGUnits;
-typedef enum _AccelerometerUnits {
-  ACCELEROMETER_UNITS__ACC_GFORCE = 1,
-  ACCELEROMETER_UNITS__ACC_MUSE1_RAW = 2
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(ACCELEROMETER_UNITS)
-} AccelerometerUnits;
+typedef enum _Muse2__Data__Datatype {
+  MUSE2__DATA__DATATYPE__EEG = 0,
+  MUSE2__DATA__DATATYPE__QUANT = 1,
+  MUSE2__DATA__DATATYPE__ACCEL = 2,
+  MUSE2__DATA__DATATYPE__BATTERY = 3,
+  MUSE2__DATA__DATATYPE__VERSION = 4,
+  MUSE2__DATA__DATATYPE__CONFIG = 5,
+  MUSE2__DATA__DATATYPE__ANNOTATION = 6,
+  MUSE2__DATA__DATATYPE__HISTOGRAM = 7,
+  MUSE2__DATA__DATATYPE__ALGVALUE = 8,
+  MUSE2__DATA__DATATYPE__DSP = 9,
+  MUSE2__DATA__DATATYPE__COMPUTING_DEVICE = 10,
+  MUSE2__DATA__DATATYPE__EEG_DROPPED = 11,
+  MUSE2__DATA__DATATYPE__ACC_DROPPED = 12,
+  MUSE2__DATA__DATATYPE__CALM_APP = 13,
+  MUSE2__DATA__DATATYPE__CALM_ALG = 14
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(MUSE2__DATA__DATATYPE)
+} Muse2__Data__Datatype;
+typedef enum _Muse2__Annotation__Format {
+  MUSE2__ANNOTATION__FORMAT__PLAIN_STRING = 0,
+  MUSE2__ANNOTATION__FORMAT__JSON = 1,
+  MUSE2__ANNOTATION__FORMAT__OSC = 2
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(MUSE2__ANNOTATION__FORMAT)
+} Muse2__Annotation__Format;
+typedef enum _Muse2__HeadLocations {
+  MUSE2__HEAD_LOCATIONS__NZ = 1,
+  MUSE2__HEAD_LOCATIONS__FP1 = 2,
+  MUSE2__HEAD_LOCATIONS__FPZ = 3,
+  MUSE2__HEAD_LOCATIONS__FP2 = 4,
+  MUSE2__HEAD_LOCATIONS__AF7 = 5,
+  MUSE2__HEAD_LOCATIONS__AF3 = 6,
+  MUSE2__HEAD_LOCATIONS__AFZ = 7,
+  MUSE2__HEAD_LOCATIONS__AF4 = 8,
+  MUSE2__HEAD_LOCATIONS__AF8 = 9,
+  MUSE2__HEAD_LOCATIONS__F9 = 10,
+  MUSE2__HEAD_LOCATIONS__F7 = 11,
+  MUSE2__HEAD_LOCATIONS__F5 = 12,
+  MUSE2__HEAD_LOCATIONS__F3 = 13,
+  MUSE2__HEAD_LOCATIONS__F1 = 14,
+  MUSE2__HEAD_LOCATIONS__FZ = 15,
+  MUSE2__HEAD_LOCATIONS__F2 = 16,
+  MUSE2__HEAD_LOCATIONS__F4 = 17,
+  MUSE2__HEAD_LOCATIONS__F6 = 18,
+  MUSE2__HEAD_LOCATIONS__F8 = 19,
+  MUSE2__HEAD_LOCATIONS__F10 = 20,
+  MUSE2__HEAD_LOCATIONS__FT9 = 21,
+  MUSE2__HEAD_LOCATIONS__FT7 = 22,
+  MUSE2__HEAD_LOCATIONS__FC5 = 23,
+  MUSE2__HEAD_LOCATIONS__FC3 = 24,
+  MUSE2__HEAD_LOCATIONS__FC1 = 25,
+  MUSE2__HEAD_LOCATIONS__FCZ = 26,
+  MUSE2__HEAD_LOCATIONS__FC2 = 27,
+  MUSE2__HEAD_LOCATIONS__FC4 = 28,
+  MUSE2__HEAD_LOCATIONS__FC6 = 29,
+  MUSE2__HEAD_LOCATIONS__FT8 = 30,
+  MUSE2__HEAD_LOCATIONS__FT10 = 31,
+  MUSE2__HEAD_LOCATIONS__A1 = 32,
+  MUSE2__HEAD_LOCATIONS__T9 = 33,
+  MUSE2__HEAD_LOCATIONS__T7 = 34,
+  MUSE2__HEAD_LOCATIONS__C5 = 35,
+  MUSE2__HEAD_LOCATIONS__C3 = 36,
+  MUSE2__HEAD_LOCATIONS__C1 = 37,
+  MUSE2__HEAD_LOCATIONS__CZ = 38,
+  MUSE2__HEAD_LOCATIONS__C2 = 39,
+  MUSE2__HEAD_LOCATIONS__C4 = 40,
+  MUSE2__HEAD_LOCATIONS__C6 = 41,
+  MUSE2__HEAD_LOCATIONS__T8 = 42,
+  MUSE2__HEAD_LOCATIONS__T10 = 43,
+  MUSE2__HEAD_LOCATIONS__A2 = 44,
+  MUSE2__HEAD_LOCATIONS__TP9 = 45,
+  MUSE2__HEAD_LOCATIONS__TP7 = 46,
+  MUSE2__HEAD_LOCATIONS__CP5 = 47,
+  MUSE2__HEAD_LOCATIONS__CP3 = 48,
+  MUSE2__HEAD_LOCATIONS__CP1 = 49,
+  MUSE2__HEAD_LOCATIONS__CPZ = 50,
+  MUSE2__HEAD_LOCATIONS__CP2 = 51,
+  MUSE2__HEAD_LOCATIONS__CP4 = 52,
+  MUSE2__HEAD_LOCATIONS__CP6 = 53,
+  MUSE2__HEAD_LOCATIONS__TP8 = 54,
+  MUSE2__HEAD_LOCATIONS__TP10 = 55,
+  MUSE2__HEAD_LOCATIONS__P9 = 56,
+  MUSE2__HEAD_LOCATIONS__P7 = 57,
+  MUSE2__HEAD_LOCATIONS__P5 = 58,
+  MUSE2__HEAD_LOCATIONS__P3 = 59,
+  MUSE2__HEAD_LOCATIONS__P1 = 60,
+  MUSE2__HEAD_LOCATIONS__PZ = 61,
+  MUSE2__HEAD_LOCATIONS__P2 = 62,
+  MUSE2__HEAD_LOCATIONS__P4 = 63,
+  MUSE2__HEAD_LOCATIONS__P6 = 64,
+  MUSE2__HEAD_LOCATIONS__P8 = 65,
+  MUSE2__HEAD_LOCATIONS__P10 = 66,
+  MUSE2__HEAD_LOCATIONS__PO7 = 67,
+  MUSE2__HEAD_LOCATIONS__PO3 = 68,
+  MUSE2__HEAD_LOCATIONS__POZ = 69,
+  MUSE2__HEAD_LOCATIONS__PO4 = 70,
+  MUSE2__HEAD_LOCATIONS__PO8 = 71,
+  MUSE2__HEAD_LOCATIONS__O1 = 72,
+  MUSE2__HEAD_LOCATIONS__OZ = 73,
+  MUSE2__HEAD_LOCATIONS__O2 = 74,
+  MUSE2__HEAD_LOCATIONS__IZ = 75,
+  MUSE2__HEAD_LOCATIONS__AUX1 = 76,
+  MUSE2__HEAD_LOCATIONS__AUX2 = 77,
+  MUSE2__HEAD_LOCATIONS__AUX3 = 78,
+  MUSE2__HEAD_LOCATIONS__AUX4 = 79,
+  MUSE2__HEAD_LOCATIONS__MUSE_LEFT_AUX = 80,
+  MUSE2__HEAD_LOCATIONS__MUSE_RIGHT_AUX = 81
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(MUSE2__HEAD_LOCATIONS)
+} Muse2__HeadLocations;
+typedef enum _Muse2__EEGUnits {
+  MUSE2__EEGUNITS__EEG_MICROVOLTS = 1,
+  MUSE2__EEGUNITS__EEG_MUSE1_RAW = 2
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(MUSE2__EEGUNITS)
+} Muse2__EEGUnits;
+typedef enum _Muse2__AccelerometerUnits {
+  MUSE2__ACCELEROMETER_UNITS__ACC_GFORCE = 1,
+  MUSE2__ACCELEROMETER_UNITS__ACC_MUSE1_RAW = 2
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(MUSE2__ACCELEROMETER_UNITS)
+} Muse2__AccelerometerUnits;
 
 /* --- messages --- */
 
-struct  _MuseDataCollection
+struct  _Muse2__DataCollection
 {
   ProtobufCMessage base;
   size_t n_collection;
-  MuseData **collection;
+  Muse2__Data **collection;
 };
-#define MUSE_DATA_COLLECTION__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&muse_data_collection__descriptor) \
+#define MUSE2__DATA_COLLECTION__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&muse2__data_collection__descriptor) \
     , 0,NULL }
 
 
-struct  _MuseData
+struct  _Muse2__Data
 {
   ProtobufCMessage base;
   double timestamp;
-  MuseData__Datatype datatype;
+  Muse2__Data__Datatype datatype;
   protobuf_c_boolean has_config_id;
   uint64_t config_id;
 };
-#define MUSE_DATA__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&muse_data__descriptor) \
+#define MUSE2__DATA__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&muse2__data__descriptor) \
     , 0, 0, 0,0 }
 
 
-struct  _EEG
+struct  _Muse2__EEG
 {
   ProtobufCMessage base;
   size_t n_values;
@@ -187,23 +187,23 @@ struct  _EEG
   protobuf_c_boolean has_ref;
   float ref;
 };
-#define EEG__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&eeg__descriptor) \
+#define MUSE2__EEG__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&muse2__eeg__descriptor) \
     , 0,NULL, 0,0, 0,0 }
 
 
-struct  _MuseQuantization
+struct  _Muse2__Quantization
 {
   ProtobufCMessage base;
   size_t n_values;
   uint32_t *values;
 };
-#define MUSE_QUANTIZATION__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&muse_quantization__descriptor) \
+#define MUSE2__QUANTIZATION__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&muse2__quantization__descriptor) \
     , 0,NULL }
 
 
-struct  _Accelerometer
+struct  _Muse2__Accelerometer
 {
   ProtobufCMessage base;
   protobuf_c_boolean has_acc1;
@@ -213,27 +213,27 @@ struct  _Accelerometer
   protobuf_c_boolean has_acc3;
   float acc3;
 };
-#define ACCELEROMETER__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&accelerometer__descriptor) \
+#define MUSE2__ACCELEROMETER__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&muse2__accelerometer__descriptor) \
     , 0,0, 0,0, 0,0 }
 
 
-struct  _Annotation
+struct  _Muse2__Annotation
 {
   ProtobufCMessage base;
   char *event_data;
   protobuf_c_boolean has_event_data_format;
-  Annotation__Format event_data_format;
+  Muse2__Annotation__Format event_data_format;
   char *event_type;
   char *event_id;
   char *parent_id;
 };
-#define ANNOTATION__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&annotation__descriptor) \
-    , NULL, 0,ANNOTATION__FORMAT__PLAIN_STRING, NULL, NULL, NULL }
+#define MUSE2__ANNOTATION__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&muse2__annotation__descriptor) \
+    , NULL, 0,MUSE2__ANNOTATION__FORMAT__PLAIN_STRING, NULL, NULL, NULL }
 
 
-struct  _Battery
+struct  _Muse2__Battery
 {
   ProtobufCMessage base;
   protobuf_c_boolean has_percent_remaining;
@@ -245,12 +245,12 @@ struct  _Battery
   protobuf_c_boolean has_temperature_celsius;
   int32_t temperature_celsius;
 };
-#define BATTERY__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&battery__descriptor) \
+#define MUSE2__BATTERY__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&muse2__battery__descriptor) \
     , 0,0, 0,0, 0,0, 0,0 }
 
 
-struct  _MuseVersion
+struct  _Muse2__Version
 {
   ProtobufCMessage base;
   char *hardware_version;
@@ -260,12 +260,12 @@ struct  _MuseVersion
   char *build_number;
   char *protocol_version;
 };
-#define MUSE_VERSION__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&muse_version__descriptor) \
+#define MUSE2__VERSION__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&muse2__version__descriptor) \
     , NULL, NULL, NULL, NULL, NULL, NULL }
 
 
-struct  _MuseConfig
+struct  _Muse2__Config
 {
   ProtobufCMessage base;
   char *mac_addr;
@@ -289,9 +289,9 @@ struct  _MuseConfig
   protobuf_c_boolean has_eeg_downsample;
   uint32_t eeg_downsample;
   protobuf_c_boolean has_eeg_units;
-  EEGUnits eeg_units;
+  Muse2__EEGUnits eeg_units;
   size_t n_eeg_locations;
-  HeadLocations *eeg_locations;
+  Muse2__HeadLocations *eeg_locations;
   protobuf_c_boolean has_eeg_conversion_factor;
   float eeg_conversion_factor;
   protobuf_c_boolean has_afe_gain;
@@ -305,7 +305,7 @@ struct  _MuseConfig
   protobuf_c_boolean has_acc_data_enabled;
   protobuf_c_boolean acc_data_enabled;
   protobuf_c_boolean has_acc_units;
-  AccelerometerUnits acc_units;
+  Muse2__AccelerometerUnits acc_units;
   protobuf_c_boolean has_acc_conversion_factor;
   float acc_conversion_factor;
   protobuf_c_boolean has_acc_sample_frequency_hz;
@@ -319,34 +319,34 @@ struct  _MuseConfig
   protobuf_c_boolean has_error_data_enabled;
   protobuf_c_boolean error_data_enabled;
 };
-#define MUSE_CONFIG__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&muse_config__descriptor) \
+#define MUSE2__CONFIG__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&muse2__config__descriptor) \
     , NULL, NULL, NULL, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, NULL, 0,0, 0,0, 0,NULL, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0 }
 
 
-struct  _EEGDroppedSamples
+struct  _Muse2__EEGDroppedSamples
 {
   ProtobufCMessage base;
   protobuf_c_boolean has_num;
   uint32_t num;
 };
-#define EEG__DROPPED_SAMPLES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&eeg__dropped_samples__descriptor) \
+#define MUSE2__EEG__DROPPED_SAMPLES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&muse2__eeg__dropped_samples__descriptor) \
     , 0,0 }
 
 
-struct  _ACCDroppedSamples
+struct  _Muse2__ACCDroppedSamples
 {
   ProtobufCMessage base;
   protobuf_c_boolean has_num;
   uint32_t num;
 };
-#define ACC__DROPPED_SAMPLES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&acc__dropped_samples__descriptor) \
+#define MUSE2__ACC__DROPPED_SAMPLES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&muse2__acc__dropped_samples__descriptor) \
     , 0,0 }
 
 
-struct  _ComputingDevice
+struct  _Muse2__ComputingDevice
 {
   ProtobufCMessage base;
   char *os_type;
@@ -363,12 +363,12 @@ struct  _ComputingDevice
   protobuf_c_boolean has_time_zone_offset_seconds;
   int32_t time_zone_offset_seconds;
 };
-#define COMPUTING_DEVICE__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&computing_device__descriptor) \
+#define MUSE2__COMPUTING_DEVICE__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&muse2__computing_device__descriptor) \
     , NULL, NULL, NULL, NULL, NULL, NULL, 0,0, NULL, NULL, NULL, 0,0 }
 
 
-struct  _DSP
+struct  _Muse2__DSP
 {
   ProtobufCMessage base;
   char *type;
@@ -378,298 +378,298 @@ struct  _DSP
   uint32_t *int_array;
   char *version;
 };
-#define DSP__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&dsp__descriptor) \
+#define MUSE2__DSP__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&muse2__dsp__descriptor) \
     , NULL, 0,NULL, 0,NULL, NULL }
 
 
-/* MuseDataCollection methods */
-void   muse_data_collection__init
-                     (MuseDataCollection         *message);
-size_t muse_data_collection__get_packed_size
-                     (const MuseDataCollection   *message);
-size_t muse_data_collection__pack
-                     (const MuseDataCollection   *message,
+/* Muse2__DataCollection methods */
+void   muse2__data_collection__init
+                     (Muse2__DataCollection         *message);
+size_t muse2__data_collection__get_packed_size
+                     (const Muse2__DataCollection   *message);
+size_t muse2__data_collection__pack
+                     (const Muse2__DataCollection   *message,
                       uint8_t             *out);
-size_t muse_data_collection__pack_to_buffer
-                     (const MuseDataCollection   *message,
+size_t muse2__data_collection__pack_to_buffer
+                     (const Muse2__DataCollection   *message,
                       ProtobufCBuffer     *buffer);
-MuseDataCollection *
-       muse_data_collection__unpack
+Muse2__DataCollection *
+       muse2__data_collection__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   muse_data_collection__free_unpacked
-                     (MuseDataCollection *message,
+void   muse2__data_collection__free_unpacked
+                     (Muse2__DataCollection *message,
                       ProtobufCAllocator *allocator);
-/* MuseData methods */
-void   muse_data__init
-                     (MuseData         *message);
-size_t muse_data__get_packed_size
-                     (const MuseData   *message);
-size_t muse_data__pack
-                     (const MuseData   *message,
+/* Muse2__Data methods */
+void   muse2__data__init
+                     (Muse2__Data         *message);
+size_t muse2__data__get_packed_size
+                     (const Muse2__Data   *message);
+size_t muse2__data__pack
+                     (const Muse2__Data   *message,
                       uint8_t             *out);
-size_t muse_data__pack_to_buffer
-                     (const MuseData   *message,
+size_t muse2__data__pack_to_buffer
+                     (const Muse2__Data   *message,
                       ProtobufCBuffer     *buffer);
-MuseData *
-       muse_data__unpack
+Muse2__Data *
+       muse2__data__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   muse_data__free_unpacked
-                     (MuseData *message,
+void   muse2__data__free_unpacked
+                     (Muse2__Data *message,
                       ProtobufCAllocator *allocator);
-/* EEG methods */
-void   eeg__init
-                     (EEG         *message);
-size_t eeg__get_packed_size
-                     (const EEG   *message);
-size_t eeg__pack
-                     (const EEG   *message,
+/* Muse2__EEG methods */
+void   muse2__eeg__init
+                     (Muse2__EEG         *message);
+size_t muse2__eeg__get_packed_size
+                     (const Muse2__EEG   *message);
+size_t muse2__eeg__pack
+                     (const Muse2__EEG   *message,
                       uint8_t             *out);
-size_t eeg__pack_to_buffer
-                     (const EEG   *message,
+size_t muse2__eeg__pack_to_buffer
+                     (const Muse2__EEG   *message,
                       ProtobufCBuffer     *buffer);
-EEG *
-       eeg__unpack
+Muse2__EEG *
+       muse2__eeg__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   eeg__free_unpacked
-                     (EEG *message,
+void   muse2__eeg__free_unpacked
+                     (Muse2__EEG *message,
                       ProtobufCAllocator *allocator);
-/* MuseQuantization methods */
-void   muse_quantization__init
-                     (MuseQuantization         *message);
-size_t muse_quantization__get_packed_size
-                     (const MuseQuantization   *message);
-size_t muse_quantization__pack
-                     (const MuseQuantization   *message,
+/* Muse2__Quantization methods */
+void   muse2__quantization__init
+                     (Muse2__Quantization         *message);
+size_t muse2__quantization__get_packed_size
+                     (const Muse2__Quantization   *message);
+size_t muse2__quantization__pack
+                     (const Muse2__Quantization   *message,
                       uint8_t             *out);
-size_t muse_quantization__pack_to_buffer
-                     (const MuseQuantization   *message,
+size_t muse2__quantization__pack_to_buffer
+                     (const Muse2__Quantization   *message,
                       ProtobufCBuffer     *buffer);
-MuseQuantization *
-       muse_quantization__unpack
+Muse2__Quantization *
+       muse2__quantization__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   muse_quantization__free_unpacked
-                     (MuseQuantization *message,
+void   muse2__quantization__free_unpacked
+                     (Muse2__Quantization *message,
                       ProtobufCAllocator *allocator);
-/* Accelerometer methods */
-void   accelerometer__init
-                     (Accelerometer         *message);
-size_t accelerometer__get_packed_size
-                     (const Accelerometer   *message);
-size_t accelerometer__pack
-                     (const Accelerometer   *message,
+/* Muse2__Accelerometer methods */
+void   muse2__accelerometer__init
+                     (Muse2__Accelerometer         *message);
+size_t muse2__accelerometer__get_packed_size
+                     (const Muse2__Accelerometer   *message);
+size_t muse2__accelerometer__pack
+                     (const Muse2__Accelerometer   *message,
                       uint8_t             *out);
-size_t accelerometer__pack_to_buffer
-                     (const Accelerometer   *message,
+size_t muse2__accelerometer__pack_to_buffer
+                     (const Muse2__Accelerometer   *message,
                       ProtobufCBuffer     *buffer);
-Accelerometer *
-       accelerometer__unpack
+Muse2__Accelerometer *
+       muse2__accelerometer__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   accelerometer__free_unpacked
-                     (Accelerometer *message,
+void   muse2__accelerometer__free_unpacked
+                     (Muse2__Accelerometer *message,
                       ProtobufCAllocator *allocator);
-/* Annotation methods */
-void   annotation__init
-                     (Annotation         *message);
-size_t annotation__get_packed_size
-                     (const Annotation   *message);
-size_t annotation__pack
-                     (const Annotation   *message,
+/* Muse2__Annotation methods */
+void   muse2__annotation__init
+                     (Muse2__Annotation         *message);
+size_t muse2__annotation__get_packed_size
+                     (const Muse2__Annotation   *message);
+size_t muse2__annotation__pack
+                     (const Muse2__Annotation   *message,
                       uint8_t             *out);
-size_t annotation__pack_to_buffer
-                     (const Annotation   *message,
+size_t muse2__annotation__pack_to_buffer
+                     (const Muse2__Annotation   *message,
                       ProtobufCBuffer     *buffer);
-Annotation *
-       annotation__unpack
+Muse2__Annotation *
+       muse2__annotation__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   annotation__free_unpacked
-                     (Annotation *message,
+void   muse2__annotation__free_unpacked
+                     (Muse2__Annotation *message,
                       ProtobufCAllocator *allocator);
-/* Battery methods */
-void   battery__init
-                     (Battery         *message);
-size_t battery__get_packed_size
-                     (const Battery   *message);
-size_t battery__pack
-                     (const Battery   *message,
+/* Muse2__Battery methods */
+void   muse2__battery__init
+                     (Muse2__Battery         *message);
+size_t muse2__battery__get_packed_size
+                     (const Muse2__Battery   *message);
+size_t muse2__battery__pack
+                     (const Muse2__Battery   *message,
                       uint8_t             *out);
-size_t battery__pack_to_buffer
-                     (const Battery   *message,
+size_t muse2__battery__pack_to_buffer
+                     (const Muse2__Battery   *message,
                       ProtobufCBuffer     *buffer);
-Battery *
-       battery__unpack
+Muse2__Battery *
+       muse2__battery__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   battery__free_unpacked
-                     (Battery *message,
+void   muse2__battery__free_unpacked
+                     (Muse2__Battery *message,
                       ProtobufCAllocator *allocator);
-/* MuseVersion methods */
-void   muse_version__init
-                     (MuseVersion         *message);
-size_t muse_version__get_packed_size
-                     (const MuseVersion   *message);
-size_t muse_version__pack
-                     (const MuseVersion   *message,
+/* Muse2__Version methods */
+void   muse2__version__init
+                     (Muse2__Version         *message);
+size_t muse2__version__get_packed_size
+                     (const Muse2__Version   *message);
+size_t muse2__version__pack
+                     (const Muse2__Version   *message,
                       uint8_t             *out);
-size_t muse_version__pack_to_buffer
-                     (const MuseVersion   *message,
+size_t muse2__version__pack_to_buffer
+                     (const Muse2__Version   *message,
                       ProtobufCBuffer     *buffer);
-MuseVersion *
-       muse_version__unpack
+Muse2__Version *
+       muse2__version__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   muse_version__free_unpacked
-                     (MuseVersion *message,
+void   muse2__version__free_unpacked
+                     (Muse2__Version *message,
                       ProtobufCAllocator *allocator);
-/* MuseConfig methods */
-void   muse_config__init
-                     (MuseConfig         *message);
-size_t muse_config__get_packed_size
-                     (const MuseConfig   *message);
-size_t muse_config__pack
-                     (const MuseConfig   *message,
+/* Muse2__Config methods */
+void   muse2__config__init
+                     (Muse2__Config         *message);
+size_t muse2__config__get_packed_size
+                     (const Muse2__Config   *message);
+size_t muse2__config__pack
+                     (const Muse2__Config   *message,
                       uint8_t             *out);
-size_t muse_config__pack_to_buffer
-                     (const MuseConfig   *message,
+size_t muse2__config__pack_to_buffer
+                     (const Muse2__Config   *message,
                       ProtobufCBuffer     *buffer);
-MuseConfig *
-       muse_config__unpack
+Muse2__Config *
+       muse2__config__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   muse_config__free_unpacked
-                     (MuseConfig *message,
+void   muse2__config__free_unpacked
+                     (Muse2__Config *message,
                       ProtobufCAllocator *allocator);
-/* EEGDroppedSamples methods */
-void   eeg__dropped_samples__init
-                     (EEGDroppedSamples         *message);
-size_t eeg__dropped_samples__get_packed_size
-                     (const EEGDroppedSamples   *message);
-size_t eeg__dropped_samples__pack
-                     (const EEGDroppedSamples   *message,
+/* Muse2__EEGDroppedSamples methods */
+void   muse2__eeg__dropped_samples__init
+                     (Muse2__EEGDroppedSamples         *message);
+size_t muse2__eeg__dropped_samples__get_packed_size
+                     (const Muse2__EEGDroppedSamples   *message);
+size_t muse2__eeg__dropped_samples__pack
+                     (const Muse2__EEGDroppedSamples   *message,
                       uint8_t             *out);
-size_t eeg__dropped_samples__pack_to_buffer
-                     (const EEGDroppedSamples   *message,
+size_t muse2__eeg__dropped_samples__pack_to_buffer
+                     (const Muse2__EEGDroppedSamples   *message,
                       ProtobufCBuffer     *buffer);
-EEGDroppedSamples *
-       eeg__dropped_samples__unpack
+Muse2__EEGDroppedSamples *
+       muse2__eeg__dropped_samples__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   eeg__dropped_samples__free_unpacked
-                     (EEGDroppedSamples *message,
+void   muse2__eeg__dropped_samples__free_unpacked
+                     (Muse2__EEGDroppedSamples *message,
                       ProtobufCAllocator *allocator);
-/* ACCDroppedSamples methods */
-void   acc__dropped_samples__init
-                     (ACCDroppedSamples         *message);
-size_t acc__dropped_samples__get_packed_size
-                     (const ACCDroppedSamples   *message);
-size_t acc__dropped_samples__pack
-                     (const ACCDroppedSamples   *message,
+/* Muse2__ACCDroppedSamples methods */
+void   muse2__acc__dropped_samples__init
+                     (Muse2__ACCDroppedSamples         *message);
+size_t muse2__acc__dropped_samples__get_packed_size
+                     (const Muse2__ACCDroppedSamples   *message);
+size_t muse2__acc__dropped_samples__pack
+                     (const Muse2__ACCDroppedSamples   *message,
                       uint8_t             *out);
-size_t acc__dropped_samples__pack_to_buffer
-                     (const ACCDroppedSamples   *message,
+size_t muse2__acc__dropped_samples__pack_to_buffer
+                     (const Muse2__ACCDroppedSamples   *message,
                       ProtobufCBuffer     *buffer);
-ACCDroppedSamples *
-       acc__dropped_samples__unpack
+Muse2__ACCDroppedSamples *
+       muse2__acc__dropped_samples__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   acc__dropped_samples__free_unpacked
-                     (ACCDroppedSamples *message,
+void   muse2__acc__dropped_samples__free_unpacked
+                     (Muse2__ACCDroppedSamples *message,
                       ProtobufCAllocator *allocator);
-/* ComputingDevice methods */
-void   computing_device__init
-                     (ComputingDevice         *message);
-size_t computing_device__get_packed_size
-                     (const ComputingDevice   *message);
-size_t computing_device__pack
-                     (const ComputingDevice   *message,
+/* Muse2__ComputingDevice methods */
+void   muse2__computing_device__init
+                     (Muse2__ComputingDevice         *message);
+size_t muse2__computing_device__get_packed_size
+                     (const Muse2__ComputingDevice   *message);
+size_t muse2__computing_device__pack
+                     (const Muse2__ComputingDevice   *message,
                       uint8_t             *out);
-size_t computing_device__pack_to_buffer
-                     (const ComputingDevice   *message,
+size_t muse2__computing_device__pack_to_buffer
+                     (const Muse2__ComputingDevice   *message,
                       ProtobufCBuffer     *buffer);
-ComputingDevice *
-       computing_device__unpack
+Muse2__ComputingDevice *
+       muse2__computing_device__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   computing_device__free_unpacked
-                     (ComputingDevice *message,
+void   muse2__computing_device__free_unpacked
+                     (Muse2__ComputingDevice *message,
                       ProtobufCAllocator *allocator);
-/* DSP methods */
-void   dsp__init
-                     (DSP         *message);
-size_t dsp__get_packed_size
-                     (const DSP   *message);
-size_t dsp__pack
-                     (const DSP   *message,
+/* Muse2__DSP methods */
+void   muse2__dsp__init
+                     (Muse2__DSP         *message);
+size_t muse2__dsp__get_packed_size
+                     (const Muse2__DSP   *message);
+size_t muse2__dsp__pack
+                     (const Muse2__DSP   *message,
                       uint8_t             *out);
-size_t dsp__pack_to_buffer
-                     (const DSP   *message,
+size_t muse2__dsp__pack_to_buffer
+                     (const Muse2__DSP   *message,
                       ProtobufCBuffer     *buffer);
-DSP *
-       dsp__unpack
+Muse2__DSP *
+       muse2__dsp__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   dsp__free_unpacked
-                     (DSP *message,
+void   muse2__dsp__free_unpacked
+                     (Muse2__DSP *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*MuseDataCollection_Closure)
-                 (const MuseDataCollection *message,
+typedef void (*Muse2__DataCollection_Closure)
+                 (const Muse2__DataCollection *message,
                   void *closure_data);
-typedef void (*MuseData_Closure)
-                 (const MuseData *message,
+typedef void (*Muse2__Data_Closure)
+                 (const Muse2__Data *message,
                   void *closure_data);
-typedef void (*EEG_Closure)
-                 (const EEG *message,
+typedef void (*Muse2__EEG_Closure)
+                 (const Muse2__EEG *message,
                   void *closure_data);
-typedef void (*MuseQuantization_Closure)
-                 (const MuseQuantization *message,
+typedef void (*Muse2__Quantization_Closure)
+                 (const Muse2__Quantization *message,
                   void *closure_data);
-typedef void (*Accelerometer_Closure)
-                 (const Accelerometer *message,
+typedef void (*Muse2__Accelerometer_Closure)
+                 (const Muse2__Accelerometer *message,
                   void *closure_data);
-typedef void (*Annotation_Closure)
-                 (const Annotation *message,
+typedef void (*Muse2__Annotation_Closure)
+                 (const Muse2__Annotation *message,
                   void *closure_data);
-typedef void (*Battery_Closure)
-                 (const Battery *message,
+typedef void (*Muse2__Battery_Closure)
+                 (const Muse2__Battery *message,
                   void *closure_data);
-typedef void (*MuseVersion_Closure)
-                 (const MuseVersion *message,
+typedef void (*Muse2__Version_Closure)
+                 (const Muse2__Version *message,
                   void *closure_data);
-typedef void (*MuseConfig_Closure)
-                 (const MuseConfig *message,
+typedef void (*Muse2__Config_Closure)
+                 (const Muse2__Config *message,
                   void *closure_data);
-typedef void (*EEGDroppedSamples_Closure)
-                 (const EEGDroppedSamples *message,
+typedef void (*Muse2__EEGDroppedSamples_Closure)
+                 (const Muse2__EEGDroppedSamples *message,
                   void *closure_data);
-typedef void (*ACCDroppedSamples_Closure)
-                 (const ACCDroppedSamples *message,
+typedef void (*Muse2__ACCDroppedSamples_Closure)
+                 (const Muse2__ACCDroppedSamples *message,
                   void *closure_data);
-typedef void (*ComputingDevice_Closure)
-                 (const ComputingDevice *message,
+typedef void (*Muse2__ComputingDevice_Closure)
+                 (const Muse2__ComputingDevice *message,
                   void *closure_data);
-typedef void (*DSP_Closure)
-                 (const DSP *message,
+typedef void (*Muse2__DSP_Closure)
+                 (const Muse2__DSP *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -677,24 +677,24 @@ typedef void (*DSP_Closure)
 
 /* --- descriptors --- */
 
-extern const ProtobufCEnumDescriptor    head_locations__descriptor;
-extern const ProtobufCEnumDescriptor    eegunits__descriptor;
-extern const ProtobufCEnumDescriptor    accelerometer_units__descriptor;
-extern const ProtobufCMessageDescriptor muse_data_collection__descriptor;
-extern const ProtobufCMessageDescriptor muse_data__descriptor;
-extern const ProtobufCEnumDescriptor    muse_data__datatype__descriptor;
-extern const ProtobufCMessageDescriptor eeg__descriptor;
-extern const ProtobufCMessageDescriptor muse_quantization__descriptor;
-extern const ProtobufCMessageDescriptor accelerometer__descriptor;
-extern const ProtobufCMessageDescriptor annotation__descriptor;
-extern const ProtobufCEnumDescriptor    annotation__format__descriptor;
-extern const ProtobufCMessageDescriptor battery__descriptor;
-extern const ProtobufCMessageDescriptor muse_version__descriptor;
-extern const ProtobufCMessageDescriptor muse_config__descriptor;
-extern const ProtobufCMessageDescriptor eeg__dropped_samples__descriptor;
-extern const ProtobufCMessageDescriptor acc__dropped_samples__descriptor;
-extern const ProtobufCMessageDescriptor computing_device__descriptor;
-extern const ProtobufCMessageDescriptor dsp__descriptor;
+extern const ProtobufCEnumDescriptor    muse2__head_locations__descriptor;
+extern const ProtobufCEnumDescriptor    muse2__eegunits__descriptor;
+extern const ProtobufCEnumDescriptor    muse2__accelerometer_units__descriptor;
+extern const ProtobufCMessageDescriptor muse2__data_collection__descriptor;
+extern const ProtobufCMessageDescriptor muse2__data__descriptor;
+extern const ProtobufCEnumDescriptor    muse2__data__datatype__descriptor;
+extern const ProtobufCMessageDescriptor muse2__eeg__descriptor;
+extern const ProtobufCMessageDescriptor muse2__quantization__descriptor;
+extern const ProtobufCMessageDescriptor muse2__accelerometer__descriptor;
+extern const ProtobufCMessageDescriptor muse2__annotation__descriptor;
+extern const ProtobufCEnumDescriptor    muse2__annotation__format__descriptor;
+extern const ProtobufCMessageDescriptor muse2__battery__descriptor;
+extern const ProtobufCMessageDescriptor muse2__version__descriptor;
+extern const ProtobufCMessageDescriptor muse2__config__descriptor;
+extern const ProtobufCMessageDescriptor muse2__eeg__dropped_samples__descriptor;
+extern const ProtobufCMessageDescriptor muse2__acc__dropped_samples__descriptor;
+extern const ProtobufCMessageDescriptor muse2__computing_device__descriptor;
+extern const ProtobufCMessageDescriptor muse2__dsp__descriptor;
 
 PROTOBUF_C__END_DECLS
 

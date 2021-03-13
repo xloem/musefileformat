@@ -12,6 +12,13 @@ add_custom_command(
     COMMENT "Running protoc on Muse_v2.proto"
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
+add_custom_command(
+    OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v1.pb-c.h ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v1.pb-c.c
+    COMMAND ${PROTOC_C} ARGS --c_out=. Muse_v1.proto
+    DEPENDS Muse_v2.proto ${PROTOC_C}
+    COMMENT "Running protoc on Muse_v2.proto"
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
 
 add_library(musefileformat musefileformat.c Muse_v2.pb-c.c musefileformat.h)
 target_include_directories(musefileformat INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

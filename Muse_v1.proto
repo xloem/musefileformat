@@ -5,8 +5,11 @@
 // the version(2 bytes).
 //
 // The message header version for this file is 1. This version number only changes with backward-incompatible changes.
-// The minor version for this file is 900.
+// The minor version for this file is 901.
 // Changelog:
+//   * v1.901:   - protobuf 2.6: Changed all "required" extension fields to "optional"
+//               - renamed from Muse.proto to Muse_v1.proto
+//               - removed commented fields to make file less confusing, feel free to bring them back
 //   * v1.900:   File content reverse engineered by combining Muse_v2.proto (v2.3) with Muse_v1.py from ix-muse-player.
 
 syntax = "proto2";
@@ -34,23 +37,8 @@ message MuseData {
         ANNOTATION = 6;
         HISTOGRAM = 7;
         ALGVALUE = 8;
-        /* Not present in v1:
-        DSP = 9;
-        COMPUTING_DEVICE = 10;
-        EEG_DROPPED = 11;
-        ACC_DROPPED = 12;
-        CALM_APP = 13;
-        CALM_ALG = 14;
-        */
     }
     required Datatype datatype = 2;
-
-    /* Not present in v1:
-    // The config_id here maps to a MuseConfig message.
-    // This is the sensor configuration for this data.
-    // This id allows data from multiple devices to be recorded to a single file.
-    optional uint64 config_id = 3;
-    */
 
     // Interaxon reserves ids 4-7 for future MuseData fields.
 
@@ -64,7 +52,7 @@ message MuseData {
 
 message MuseEEG {
     extend MuseData {
-        required MuseEEG museData = 8;
+        optional MuseEEG museData = 8;
     }
     optional sint32 left_aux = 1;
     optional sint32 left_ear = 2;
@@ -80,7 +68,7 @@ message MuseEEG {
 // Possible quantization values are 1, 2, 4, 8, 16, 32, 64, 128
 message MuseQuantization {
     extend MuseData {
-        required MuseQuantization museData = 9;
+        optional MuseQuantization museData = 9;
     }
     optional uint32 left_aux = 1;
     optional uint32 left_ear = 2;
@@ -93,7 +81,7 @@ message MuseQuantization {
 // Accelerometer values are stored as milli-G's
 message MuseAccelerometer {
     extend MuseData {
-        required MuseAccelerometer museData = 10;
+        optional MuseAccelerometer museData = 10;
     }
     optional sint32 acc1 = 1; // forward_back
     optional sint32 acc2 = 2; // up_down
@@ -104,7 +92,7 @@ message MuseAccelerometer {
 // You can use this message to record application-level events.
 message MuseAnnotation {
     extend MuseData {
-        required MuseAnnotation museData = 100;
+        optional MuseAnnotation museData = 100;
     }
     // This is additional data for the event, can be in any format specified 
     // by the Format enum. 
@@ -112,9 +100,6 @@ message MuseAnnotation {
     enum Format {
         PLAIN_STRING = 0;
         JSON = 1;
-        /* Not present in v1:
-        OSC = 2;
-        */
     }
     // This specifies the string format of event_data.
     optional Format event_data_format = 2 [default = PLAIN_STRING];
@@ -132,7 +117,7 @@ message MuseAnnotation {
 
 message MuseBattery {
     extend MuseData {
-       required MuseBattery museData = 101;
+       optional MuseBattery museData = 101;
     }
     optional uint32 percent_remaining = 1;
     optional uint32 battery_fuel_gauge_millivolts = 2;
@@ -144,7 +129,7 @@ message MuseBattery {
 // This indicates the version of the Muse that was used with this recording.
 message MuseVersion {
     extend MuseData {
-        required MuseVersion museData = 102;
+        optional MuseVersion museData = 102;
     }
     optional string hardware_version = 1;
     optional string firmware_headset_version = 2;
@@ -158,7 +143,7 @@ message MuseVersion {
 // This indicates the configuration of a specific Muse specified by the config_id.
 message MuseConfig {
     extend MuseData {
-        required MuseConfig museData = 103;
+        optional MuseConfig museData = 103;
     }
 
     // Global configuration

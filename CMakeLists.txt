@@ -20,7 +20,7 @@ add_custom_command(
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_library(musefileformat musefileformat.c Muse_v1.pb-c.c Muse_v2.pb-c.c musefileformat.h)
+add_library(musefileformat musefileformat.c Muse_v2.pb-c.c musefileformat.h)
 target_include_directories(musefileformat INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(musefileformat ${PROTOC_C_LIBRARY})
 install(FILES musefileformat.h DESTINATION include)

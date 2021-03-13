@@ -1,86 +1,110 @@
 #include "musefileformat.h"
+/*#include "Muse_v1.pb-c.h"*/
 #include "Muse_v2.pb-c.h"
 
-void musefile_init(MuseFileData *data)
+void musefile_init(MusefileDataCollection *mf)
 {
-    data->size = 0;
-    data->version = 0;
-    data->collection = NULL;
+    mf->size = 0;
+    mf->version = 0;
+    mf->count = 0;
+    mf->collection = NULL;
 }
 
-size_t musefile_unpack_header(MuseFileData *data, uint8_t const buf[6])
+size_t musefile_unpack_header(MusefileDataCollection *mf, uint8_t const buf[6])
 {
     uint16_t version = (buf[5] << 8) | buf[4];
     if (version != 2) {
         return 0;
     }
-    if (data->collection != NULL) {
-        musefile_deinit(data);
+    if (mf->collection != NULL) {
+        musefile_deinit(mf);
     }
-    data->size = (
+    mf->size = (
         (buf[3] << 24) |
         (buf[2] << 16) |
         (buf[1] << 8) |
         buf[0]
     );
-    data->version = version;
-    data->collection = NULL;
+    mf->version = version;
+    mf->collection = NULL;
     return 6;
 }
 
-size_t musefile_unpack_data(MuseFileData *data, uint8_t const *buf)
+size_t musefile_unpack_data(MusefileDataCollection *mf, uint8_t const *buf)
 {
-    if (data->collection != NULL) {
-        muse_data_collection__free_unpacked((MuseDataCollection*)data->collection, NULL);
-        data->collection = NULL;
+    if (mf->collection != NULL) {
+        muse2__data_collection__free_unpacked((Muse2__DataCollection*)mf->collection, NULL);
+        mf->collection = NULL;
     }
 
-    if (data->version != 2) {
+    if (mf->version != 2) {
         return 0;
     }
 
-    data->collection = (ProtobufCMessage*)muse_data_collection__unpack(NULL, data->size, buf);
-    return data->size;
+    mf->collection = (ProtobufCMessage*)muse2__data_collection__unpack(NULL, mf->size, buf);
+    mf->count = ((Muse2__DataCollection*)mf->collection)->n_collection;
+    return mf->size;
 }
 
-size_t musefile_unpack(MuseFileData *data, uint8_t const *buf, size_t size)
+size_t musefile_unpack(MusefileDataCollection *mf, uint8_t const *buf, size_t size)
 {
     size_t offset;
 
     if (size < 6) {
-        data->size = 0;
+        mf->size = 0;
         return 0;
     }
 
-    offset = musefile_unpack_header(data, buf);
-    if (size < data->size + offset || offset == 0) {
+    offset = musefile_unpack_header(mf, buf);
+    if (size < mf->size + offset || offset == 0) {
         return 0;
     }
 
-    offset += musefile_unpack_data(data, buf);
+    offset += musefile_unpack_data(mf, buf + offset);
     return offset;
 }
 
-void musefile_pack(MuseFileData *data, uint8_t *buf)
+void musefile_pack(MusefileDataCollection *mf, uint8_t *buf)
 {
-    data->version = 2;
-    data->size = muse_data_collection__get_packed_size((MuseDataCollection*)data->collection);
-    buf[0] = data->size & 0xff;
-    buf[1] = (data->size >> 8) & 0xff;
-    buf[2] = (data->size >> 16) & 0xff;
-    buf[3] = (data->size >> 24) & 0xff;
-    buf[4] = data->version;
+    mf->version = 2;
+    mf->size = muse2__data_collection__get_packed_size((Muse2__DataCollection*)mf->collection);
+    buf[0] = mf->size & 0xff;
+    buf[1] = (mf->size >> 8) & 0xff;
+    buf[2] = (mf->size >> 16) & 0xff;
+    buf[3] = (mf->size >> 24) & 0xff;
+    buf[4] = mf->version;
     buf[5] = 0;
-    muse_data_collection__pack((MuseDataCollection*)data->collection, buf + 6);
+    muse2__data_collection__pack((Muse2__DataCollection*)mf->collection, buf + 6);
 }
 
-void musefile_deinit(MuseFileData *data)
+MusefileData musefile_data(MusefileDataCollection *mf, size_t index)
 {
-    if (data->collection != NULL) {
-        muse_data_collection__free_unpacked((MuseDataCollection*)data->collection, NULL);
-        data->collection = NULL;
+    Muse2__DataCollection *collection = (Muse2__DataCollection*)mf->collection;
+    if (index >= collection->n_collection) {
+        return (MusefileData){
+            .timestamp = 0,
+            .type = -1,
+            .config = -1,
+            .data = NULL
+        };
     }
-    data->size = 0;
-    data->version = 0;
+    Muse2__Data *data = collection->collection[index];
+    MusefileData result = {
+        .timestamp = data->timestamp,
+        .type = data->datatype,
+        .config = data->has_config_id ? data->config_id : -1,
+        .data = (ProtobufCMessage*)data
+    };
+    return result;
+}
+
+void musefile_deinit(MusefileDataCollection *mf)
+{
+    if (mf->collection != NULL) {
+        muse2__data_collection__free_unpacked((Muse2__DataCollection*)mf->collection, NULL);
+        mf->collection = NULL;
+    }
+    mf->size = 0;
+    mf->version = 0;
 }
 

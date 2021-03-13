@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Muse_v2.pb-c.h"
+#include <stddef.h>
+#include <stdint.h>
 
 // see also https://sites.google.com/a/interaxon.ca/muse-developer-site/data-files
 // on interaxon's site, it states the only known version is 1.  this is an error.  Muse_v2.proto uses version 2.
@@ -10,8 +11,12 @@ typedef struct MuseFileData
 {
     // each message is prefixed by a 6 byte header giving the length
     uint32_t size;
-    uint16_t version; // == 1
-    MuseDataCollection *collection;
+    uint16_t version;
+
+    // This is a pointer to a MuseDataCollection.
+    // If version == 1, it is the one from Muse_v1.pb-c.h (unimplemented)
+    // If versoin == 2, it is the one from Muse_v2.pb-c.h
+    struct ProtobufCMessage *collection;
 } MuseFileData;
 
 void musefile_init(MuseFileData *data);

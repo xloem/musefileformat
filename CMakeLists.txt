@@ -4,7 +4,7 @@ project(musefileformat)
 
 
 find_program(PROTOC_C NAMES protoc-c DOC "Protocol Buffers C compiler")
-find_library(PROTOC_C_LIBRARY NAMES protobuf-c) 
+find_library(PROTOC_C_LIBRARY NAMES protobuf-c REQUIRED)
 add_custom_command(
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v2.pb-c.h ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v2.pb-c.c
     COMMAND ${PROTOC_C} ARGS --c_out=. Muse_v2.proto

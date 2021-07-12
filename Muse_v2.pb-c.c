@@ -10,7 +10,7 @@
 void   muse2__data_collection__init
                      (Muse2__DataCollection         *message)
 {
-  static Muse2__DataCollection init_value = MUSE2__DATA_COLLECTION__INIT;
+  static const Muse2__DataCollection init_value = MUSE2__DATA_COLLECTION__INIT;
   *message = init_value;
 }
 size_t muse2__data_collection__get_packed_size
@@ -47,13 +47,15 @@ void   muse2__data_collection__free_unpacked
                      (Muse2__DataCollection *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &muse2__data_collection__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   muse2__data__init
                      (Muse2__Data         *message)
 {
-  static Muse2__Data init_value = MUSE2__DATA__INIT;
+  static const Muse2__Data init_value = MUSE2__DATA__INIT;
   *message = init_value;
 }
 size_t muse2__data__get_packed_size
@@ -90,13 +92,15 @@ void   muse2__data__free_unpacked
                      (Muse2__Data *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &muse2__data__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   muse2__eeg__init
                      (Muse2__EEG         *message)
 {
-  static Muse2__EEG init_value = MUSE2__EEG__INIT;
+  static const Muse2__EEG init_value = MUSE2__EEG__INIT;
   *message = init_value;
 }
 size_t muse2__eeg__get_packed_size
@@ -133,13 +137,15 @@ void   muse2__eeg__free_unpacked
                      (Muse2__EEG *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &muse2__eeg__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   muse2__quantization__init
                      (Muse2__Quantization         *message)
 {
-  static Muse2__Quantization init_value = MUSE2__QUANTIZATION__INIT;
+  static const Muse2__Quantization init_value = MUSE2__QUANTIZATION__INIT;
   *message = init_value;
 }
 size_t muse2__quantization__get_packed_size
@@ -176,13 +182,15 @@ void   muse2__quantization__free_unpacked
                      (Muse2__Quantization *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &muse2__quantization__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   muse2__accelerometer__init
                      (Muse2__Accelerometer         *message)
 {
-  static Muse2__Accelerometer init_value = MUSE2__ACCELEROMETER__INIT;
+  static const Muse2__Accelerometer init_value = MUSE2__ACCELEROMETER__INIT;
   *message = init_value;
 }
 size_t muse2__accelerometer__get_packed_size
@@ -219,13 +227,15 @@ void   muse2__accelerometer__free_unpacked
                      (Muse2__Accelerometer *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &muse2__accelerometer__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   muse2__annotation__init
                      (Muse2__Annotation         *message)
 {
-  static Muse2__Annotation init_value = MUSE2__ANNOTATION__INIT;
+  static const Muse2__Annotation init_value = MUSE2__ANNOTATION__INIT;
   *message = init_value;
 }
 size_t muse2__annotation__get_packed_size
@@ -262,13 +272,15 @@ void   muse2__annotation__free_unpacked
                      (Muse2__Annotation *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &muse2__annotation__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   muse2__battery__init
                      (Muse2__Battery         *message)
 {
-  static Muse2__Battery init_value = MUSE2__BATTERY__INIT;
+  static const Muse2__Battery init_value = MUSE2__BATTERY__INIT;
   *message = init_value;
 }
 size_t muse2__battery__get_packed_size
@@ -305,13 +317,15 @@ void   muse2__battery__free_unpacked
                      (Muse2__Battery *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &muse2__battery__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   muse2__version__init
                      (Muse2__Version         *message)
 {
-  static Muse2__Version init_value = MUSE2__VERSION__INIT;
+  static const Muse2__Version init_value = MUSE2__VERSION__INIT;
   *message = init_value;
 }
 size_t muse2__version__get_packed_size
@@ -348,13 +362,15 @@ void   muse2__version__free_unpacked
                      (Muse2__Version *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &muse2__version__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   muse2__config__init
                      (Muse2__Config         *message)
 {
-  static Muse2__Config init_value = MUSE2__CONFIG__INIT;
+  static const Muse2__Config init_value = MUSE2__CONFIG__INIT;
   *message = init_value;
 }
 size_t muse2__config__get_packed_size
@@ -391,13 +407,15 @@ void   muse2__config__free_unpacked
                      (Muse2__Config *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &muse2__config__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   muse2__eeg__dropped_samples__init
                      (Muse2__EEGDroppedSamples         *message)
 {
-  static Muse2__EEGDroppedSamples init_value = MUSE2__EEG__DROPPED_SAMPLES__INIT;
+  static const Muse2__EEGDroppedSamples init_value = MUSE2__EEG__DROPPED_SAMPLES__INIT;
   *message = init_value;
 }
 size_t muse2__eeg__dropped_samples__get_packed_size
@@ -434,13 +452,15 @@ void   muse2__eeg__dropped_samples__free_unpacked
                      (Muse2__EEGDroppedSamples *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &muse2__eeg__dropped_samples__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   muse2__acc__dropped_samples__init
                      (Muse2__ACCDroppedSamples         *message)
 {
-  static Muse2__ACCDroppedSamples init_value = MUSE2__ACC__DROPPED_SAMPLES__INIT;
+  static const Muse2__ACCDroppedSamples init_value = MUSE2__ACC__DROPPED_SAMPLES__INIT;
   *message = init_value;
 }
 size_t muse2__acc__dropped_samples__get_packed_size
@@ -477,13 +497,15 @@ void   muse2__acc__dropped_samples__free_unpacked
                      (Muse2__ACCDroppedSamples *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &muse2__acc__dropped_samples__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   muse2__computing_device__init
                      (Muse2__ComputingDevice         *message)
 {
-  static Muse2__ComputingDevice init_value = MUSE2__COMPUTING_DEVICE__INIT;
+  static const Muse2__ComputingDevice init_value = MUSE2__COMPUTING_DEVICE__INIT;
   *message = init_value;
 }
 size_t muse2__computing_device__get_packed_size
@@ -520,13 +542,15 @@ void   muse2__computing_device__free_unpacked
                      (Muse2__ComputingDevice *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &muse2__computing_device__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   muse2__dsp__init
                      (Muse2__DSP         *message)
 {
-  static Muse2__DSP init_value = MUSE2__DSP__INIT;
+  static const Muse2__DSP init_value = MUSE2__DSP__INIT;
   *message = init_value;
 }
 size_t muse2__dsp__get_packed_size
@@ -563,6 +587,8 @@ void   muse2__dsp__free_unpacked
                      (Muse2__DSP *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &muse2__dsp__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -604,7 +630,7 @@ const ProtobufCMessageDescriptor muse2__data_collection__descriptor =
   (ProtobufCMessageInit) muse2__data_collection__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-const ProtobufCEnumValue muse2__data__datatype__enum_values_by_number[15] =
+static const ProtobufCEnumValue muse2__data__datatype__enum_values_by_number[15] =
 {
   { "EEG", "MUSE2__DATA__DATATYPE__EEG", 0 },
   { "QUANT", "MUSE2__DATA__DATATYPE__QUANT", 1 },
@@ -625,7 +651,7 @@ const ProtobufCEnumValue muse2__data__datatype__enum_values_by_number[15] =
 static const ProtobufCIntRange muse2__data__datatype__value_ranges[] = {
 {0, 0},{0, 15}
 };
-const ProtobufCEnumValueIndex muse2__data__datatype__enum_values_by_name[15] =
+static const ProtobufCEnumValueIndex muse2__data__datatype__enum_values_by_name[15] =
 {
   { "ACCEL", 2 },
   { "ACC_DROPPED", 12 },
@@ -889,7 +915,7 @@ const ProtobufCMessageDescriptor muse2__accelerometer__descriptor =
   (ProtobufCMessageInit) muse2__accelerometer__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-const ProtobufCEnumValue muse2__annotation__format__enum_values_by_number[3] =
+static const ProtobufCEnumValue muse2__annotation__format__enum_values_by_number[3] =
 {
   { "PLAIN_STRING", "MUSE2__ANNOTATION__FORMAT__PLAIN_STRING", 0 },
   { "JSON", "MUSE2__ANNOTATION__FORMAT__JSON", 1 },
@@ -898,7 +924,7 @@ const ProtobufCEnumValue muse2__annotation__format__enum_values_by_number[3] =
 static const ProtobufCIntRange muse2__annotation__format__value_ranges[] = {
 {0, 0},{0, 3}
 };
-const ProtobufCEnumValueIndex muse2__annotation__format__enum_values_by_name[3] =
+static const ProtobufCEnumValueIndex muse2__annotation__format__enum_values_by_name[3] =
 {
   { "JSON", 1 },
   { "OSC", 2 },
@@ -1893,7 +1919,7 @@ const ProtobufCMessageDescriptor muse2__dsp__descriptor =
   (ProtobufCMessageInit) muse2__dsp__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-const ProtobufCEnumValue muse2__head_locations__enum_values_by_number[81] =
+static const ProtobufCEnumValue muse2__head_locations__enum_values_by_number[81] =
 {
   { "NZ", "MUSE2__HEAD_LOCATIONS__NZ", 1 },
   { "FP1", "MUSE2__HEAD_LOCATIONS__FP1", 2 },
@@ -1980,7 +2006,7 @@ const ProtobufCEnumValue muse2__head_locations__enum_values_by_number[81] =
 static const ProtobufCIntRange muse2__head_locations__value_ranges[] = {
 {1, 0},{0, 81}
 };
-const ProtobufCEnumValueIndex muse2__head_locations__enum_values_by_name[81] =
+static const ProtobufCEnumValueIndex muse2__head_locations__enum_values_by_name[81] =
 {
   { "A1", 31 },
   { "A2", 43 },
@@ -2079,7 +2105,7 @@ const ProtobufCEnumDescriptor muse2__head_locations__descriptor =
   muse2__head_locations__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-const ProtobufCEnumValue muse2__eegunits__enum_values_by_number[2] =
+static const ProtobufCEnumValue muse2__eegunits__enum_values_by_number[2] =
 {
   { "EEG_MICROVOLTS", "MUSE2__EEGUNITS__EEG_MICROVOLTS", 1 },
   { "EEG_MUSE1_RAW", "MUSE2__EEGUNITS__EEG_MUSE1_RAW", 2 },
@@ -2087,7 +2113,7 @@ const ProtobufCEnumValue muse2__eegunits__enum_values_by_number[2] =
 static const ProtobufCIntRange muse2__eegunits__value_ranges[] = {
 {1, 0},{0, 2}
 };
-const ProtobufCEnumValueIndex muse2__eegunits__enum_values_by_name[2] =
+static const ProtobufCEnumValueIndex muse2__eegunits__enum_values_by_name[2] =
 {
   { "EEG_MICROVOLTS", 0 },
   { "EEG_MUSE1_RAW", 1 },
@@ -2107,7 +2133,7 @@ const ProtobufCEnumDescriptor muse2__eegunits__descriptor =
   muse2__eegunits__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-const ProtobufCEnumValue muse2__accelerometer_units__enum_values_by_number[2] =
+static const ProtobufCEnumValue muse2__accelerometer_units__enum_values_by_number[2] =
 {
   { "ACC_GFORCE", "MUSE2__ACCELEROMETER_UNITS__ACC_GFORCE", 1 },
   { "ACC_MUSE1_RAW", "MUSE2__ACCELEROMETER_UNITS__ACC_MUSE1_RAW", 2 },
@@ -2115,7 +2141,7 @@ const ProtobufCEnumValue muse2__accelerometer_units__enum_values_by_number[2] =
 static const ProtobufCIntRange muse2__accelerometer_units__value_ranges[] = {
 {1, 0},{0, 2}
 };
-const ProtobufCEnumValueIndex muse2__accelerometer_units__enum_values_by_name[2] =
+static const ProtobufCEnumValueIndex muse2__accelerometer_units__enum_values_by_name[2] =
 {
   { "ACC_GFORCE", 0 },
   { "ACC_MUSE1_RAW", 1 },

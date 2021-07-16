@@ -7,7 +7,7 @@ void musefile_init(MusefileDataCollection *mf)
     mf->size = 0;
     mf->version = 0;
     mf->count = 0;
-    mf->collection = NULL;
+    *(_muse2_DataCollection *)&mf->collection = DataCollection_init_zero;
 }
 
 size_t musefile_unpack_header(MusefileDataCollection *mf, uint8_t const buf[6])
@@ -16,9 +16,10 @@ size_t musefile_unpack_header(MusefileDataCollection *mf, uint8_t const buf[6])
     if (version != 2) {
         return 0;
     }
-    if (mf->collection != NULL) {
+    if (mf->collection[0] != NULL) {
         musefile_deinit(mf);
     }
+    *(_muse2_DataCollection *)&mf->collection = DataCollection_init_zero;
     mf->size = (
         (buf[3] << 24) |
         (buf[2] << 16) |
@@ -40,6 +41,8 @@ size_t musefile_unpack_data(MusefileDataCollection *mf, uint8_t const *buf)
     if (mf->version != 2) {
         return 0;
     }
+
+    pb_istream_t stream = pb_istream_from_buffer(
 
     mf->collection = (ProtobufCMessage*)muse2__data_collection__unpack(NULL, mf->size, buf);
     mf->count = ((Muse2__DataCollection*)mf->collection)->n_collection;

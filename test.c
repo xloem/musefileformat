@@ -21,26 +21,26 @@ int main(int argc, char **argv)
     MusefileData data;
 
     musefile_init(&muse);
-    printf("Initialised unused: size=%d version=%d count=%d\n", muse.size, muse.version, muse.count);
+    printf("Initialised unused: size=%d version=%d count=%zd\n", muse.size, muse.version, muse.count);
     if (muse.size != 0 || muse.version != 0 || muse.count != 0) { return -1; }
 
     offset += musefile_unpack(&muse, offset, tail - offset);
-    printf("First header: size=%d version=%d count=%d\n", muse.size, muse.version, muse.count);
+    printf("First header: size=%d version=%d count=%zd\n", muse.size, muse.version, muse.count);
     if (muse.size != 0x41 || muse.version > 2 || muse.count != 1) { return -1; }
 
     data = musefile_data(&muse, 0);
-    printf("Gyro entry: time=%f type=%d config=%d\n", data.timestamp, data.type, data.config);
+    printf("Gyro entry: time=%f type=%d config=%zd\n", data.timestamp, data.type, data.config);
     if (data.type != MUSE_ANNOTATION || (int)data.timestamp != 1607690027) { return -1; }
 
     offset += musefile_unpack(&muse, offset, tail - offset);
-    printf("Second header: size=%d version=%d count=%d\n", muse.size, muse.version, muse.count);
+    printf("Second header: size=%d version=%d count=%zd\n", muse.size, muse.version, muse.count);
     if (muse.size != 0x3f || muse.version > 2 || muse.count != 1) { return -1; }
 
     data = musefile_data(&muse, 0);
-    printf("Gyro entry: time=%f type=%d config=%d\n", data.timestamp, data.type, data.config);
+    printf("Gyro entry: time=%f type=%d config=%lld\n", data.timestamp, data.type, (long long)data.config);
     if (data.type != MUSE_ANNOTATION || (int)data.timestamp != 1607690027) { return -1; }
 
-    printf("Bytes: read=%d original=%d\n", offset - buf, sizeof(twover2messages));
+    printf("Bytes: read=%zd original=%zd\n", offset - buf, sizeof(twover2messages));
     if (offset - buf != sizeof(twover2messages)) { return -1; }
 
     return 0;

@@ -2,25 +2,37 @@ cmake_minimum_required(VERSION 3.10)
 
 project(musefileformat)
 
+find_package(Nanopb REQUIRED)
 
-find_program(PROTOC_C NAMES protoc-c DOC "Protocol Buffers C compiler")
-find_library(PROTOC_C_LIBRARY NAMES protobuf-c REQUIRED)
+find_program(PROTO_GEN NAMES nanopb_generator.py DOC "Nanopb compiler")
+
 add_custom_command(
-    OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v2.pb-c.h ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v2.pb-c.c
-    COMMAND ${PROTOC_C} ARGS --c_out=. Muse_v2.proto
-    DEPENDS Muse_v2.proto ${PROTOC_C}
-    COMMENT "Running protoc on Muse_v2.proto"
+    OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v2.pb.h ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v2.pb.c
+    COMMAND ${PROTO_GEN} ARGS
+    	--output-dir=${CMAKE_CURRENT_SOURCE_DIR}
+	--options-path=${CMAKE_CURRENT_SOURCE_DIR}
+	${CMAKE_CURRENT_SOURCE_DIR}/Muse_v2.proto
+    DEPENDS Muse_v2.proto ${PROTO_GEN}
+    COMMENT "Running ${PROTO_GEN} on Muse_v2.proto"
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 add_custom_command(
-    OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v1.pb-c.h ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v1.pb-c.c
-    COMMAND ${PROTOC_C} ARGS --c_out=. Muse_v1.proto
-    DEPENDS Muse_v2.proto ${PROTOC_C}
-    COMMENT "Running protoc on Muse_v2.proto"
+    OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v1.pb.h ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v1.pb.c
+    COMMAND ${PROTO_GEN} ARGS
+    	--output-dir=${CMAKE_CURRENT_SOURCE_DIR}
+	--options-path=${CMAKE_CURRENT_SOURCE_DIR}
+	${CMAKE_CURRENT_SOURCE_DIR}/Muse_v1.proto
+    DEPENDS Muse_v1.proto ${PROTO_GEN}
+    COMMENT "Running ${PROTO_GEN} on Muse_v1.proto"
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
+add_custom_target(generate_proto_sources DEPENDS
+	${CMAKE_CURRENT_SOURCE_DIR}/Muse_v2.pb.c
+	${CMAKE_CURRENT_SOURCE_DIR}/Muse_v1.pb.c
+)
+#set_source_files_properties(${PROTO_SRCS} ${PROTO_HDRS} PROPERTIES GENERATED TRUE)
 
-add_library(musefileformat musefileformat.c Muse_v2.pb-c.c musefileformat.h)
+add_library(musefileformat musefileformat.c musefileformat.h Muse_v2.pb.c Muse_v2.pb.h)
 target_include_directories(musefileformat INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(musefileformat ${PROTOC_C_LIBRARY})
 install(FILES musefileformat.h DESTINATION include)

@@ -1,5 +1,9 @@
 #pragma once
 
+#if defined(__cplusplus)
+extern "C" {
+#endif
+
 #include <stddef.h>
 #include <stdint.h>
 
@@ -16,9 +20,9 @@ typedef struct MusefileDataCollection
     // number of data items within this entry
     size_t count;
 
-    // If version == 1, this is a Muse1__DataCollection from Muse_v1.pb-c.h (unimplemented)
-    // If versoin == 2, this is a Muse2__DataCollection from Muse_v2.pb-c.h
-    struct ProtobufCMessage *collection;
+    // If version == 1, this is a _muse1_DataCollection from Muse_v1.pb.c (unimplemented)
+    // If versin == 2, this is a _muse2_DataCollection from Muse_v2.pb.h
+    void * collection[2];
 } MusefileDataCollection;
 
 typedef enum MusefileDatatype
@@ -63,3 +67,7 @@ MusefileData musefile_data(MusefileDataCollection *mf, size_t index);
 
 //void musefile_pack(MusefileData *data, uint8_t *buf);
 void musefile_deinit(MusefileDataCollection *data);
+
+#if defined(__cplusplus)
+} // extern "C"
+#endif

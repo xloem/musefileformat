@@ -31,21 +31,44 @@ size_t musefile_unpack_header(MusefileDataCollection *mf, uint8_t const buf[6])
     return 6;
 }
 
+bool musefile_datacollection_callback(pb_istream_t *stream, const pb_field_iter_t *field, void **arg)
+{
+			
+}
+
 size_t musefile_unpack_data(MusefileDataCollection *mf, uint8_t const *buf)
 {
-    if (mf->collection != NULL) {
-        muse2__data_collection__free_unpacked((Muse2__DataCollection*)mf->collection, NULL);
-        mf->collection = NULL;
+    if (mf->count != 0) {
+#if defined(PB_ENABLE_MALLOC)
+        while (mf->count) {
+            -- mf->count;
+            pb_release(muse2_Data_fields, &mf->collection[mf->count]);
+        }
+#endif
+        mf->count = 0;
     }
 
     if (mf->version != 2) {
         return 0;
     }
 
-    pb_istream_t stream = pb_istream_from_buffer(
 
-    mf->collection = (ProtobufCMessage*)muse2__data_collection__unpack(NULL, mf->size, buf);
-    mf->count = ((Muse2__DataCollection*)mf->collection)->n_collection;
+    pb_istream_t stream = pb_istream_from_buffer(buf, mf->size);
+    
+    muse2_DataCollection dc;
+    dc.collection.arg = mf;
+    dc.collection.decode = musefile_datacollection_callback;
+
+    bool status = pb_decode(&stream, muse2_DataCollection_fields, &dc);
+
+#if defined(PB_ENABLE_MALLOC)
+    pb_release(muse2_DataCollection_fields, &dc);
+#endif
+
+    if (!status) {
+        return 0;
+    }
+
     return mf->size;
 }
 

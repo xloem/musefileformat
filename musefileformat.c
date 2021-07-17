@@ -31,9 +31,72 @@ size_t musefile_unpack_header(MusefileDataCollection *mf, uint8_t const buf[6])
     return 6;
 }
 
-bool musefile_datacollection_callback(pb_istream_t *stream, const pb_field_iter_t *field, void **arg)
+struct decode_state {
+    MuseFileFormat * mf;
+    muse2_Data * data;
+    float * floats;
+    float * tail;
+};
+
+bool decode_floats(pb_istream_t *stream, const pb_field_iter_t *field, void **arg)
 {
-			
+    floatvec *vec = *arg;
+    while (stream->bytes_left)
+    {
+        if (vec->floats == vec->tail) {
+            return false;
+        }
+        if (!pb_decode_float(stream, vec->floats)) {
+            return false;
+        }
+        ++ vec->floats;
+    }
+    return true;
+}
+
+bool muse2_decode_data(pb_istream_t *stream, const pb_field_iter_t *field, void **arg)
+{
+    MusefileDataCollection *mf = *arg;
+    muse2_Data data = muse2_Data_init_zero;
+    bool status;
+
+#define typ(Name, name) \
+    muse2_##Name name
+
+#define ext(Name, name, next) \
+    typ(Name, name##_data) = muse2_##Name##_init_zero;
+    pb_extension_t name = {
+        .type = &muse2_##Name##_data,
+        .dest = &name##_data,
+        .next = next,
+        .found = false
+    };
+
+    ext(DSP, dsp, NULL);
+    ext(ComputingDevice, computingdevice, &dsp);
+    ext(ACC_DroppedSamples, acc_droppedsamples, &computingdevice);
+    ext(EEG_DroppedSamples, eeg_droppedsamples, &acc_droppedsamples);
+    ext(Config, config, &eeg_droppedsamples);
+    ext(Version, version, &config);
+    ext(Battery, battery, &version);
+    ext(Annotation, annotation, &battery);
+    ext(Accelerometer, accelerometer, &annotation);
+    ext(Quantization, quantization, &accelerometer);
+    ext(EEG, eeg, &quantization);
+
+#undef ext
+#undef typ
+
+    data.extensions = &eeg; // the first in the linked list
+
+    eeg_data.values.arg = mf;
+
+    
+    status = pb_decode(stream, muse2_Data_fields, &data);
+    if (eeg.found) {
+        
+    }
+    return status;
 }
 
 size_t musefile_unpack_data(MusefileDataCollection *mf, uint8_t const *buf)

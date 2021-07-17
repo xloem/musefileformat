@@ -26,14 +26,16 @@ typedef struct MusefileDataCollection
     // number of data items within this entry
     size_t count;
 
-    // If version == 1, this is a muse1_DataCollection from Muse_v1.pb.h (unimplemented)
-    // If versin == 2, this is a muse2_DataCollection from Muse_v2.pb.h
-    void * collection;
+    struct {
+        enum MusefileDatatype type;
+        double timestamp;
+        double value;
+    } data[1024];
 } MusefileDataCollection;
 
 typedef enum MusefileDatatype
 {
-  MUSE_EEG = 0,
+  MUSE_EEG = 0, // could add individual channels as types
   MUSE_QUANT = 1,
   MUSE_ACCEL = 2,
   MUSE_BATTERY = 3,

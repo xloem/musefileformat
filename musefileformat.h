@@ -11,6 +11,12 @@ extern "C" {
 // on interaxon's site, it states the only known version is 1.  this is an error.  Muse_v2.proto uses version 2.
 // in a .muse file, channel types are not interleaved in order.  so, all eeg data is in order, but it may be out-of-order relative to accelerometer dtaa.
 
+
+// a solution to easy streaming could be a function
+// that gets the next data element and a structure
+// or output value that reports how much new data
+// is needed, or whether to fill a buffer
+
 typedef struct MusefileDataCollection
 {
     // each message is prefixed by a 6 byte header giving the length

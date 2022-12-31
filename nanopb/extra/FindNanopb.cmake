@@ -25,6 +25,7 @@
 #                                     under build directory, instead of mirroring
 #                                     relative paths of source directories.
 #                                     Set to FALSE if you want to disable this behaviour.
+#   PROTOC_OPTIONS           - Pass options to protoc executable 
 #
 # Defines the following variables:
 #
@@ -124,6 +125,12 @@ function(NANOPB_GENERATE_CPP SRCS HDRS)
   if(NOT NANOPB_GENERATE_CPP_UNPARSED_ARGUMENTS)
     return()
   endif()
+  set(NANOPB_OPTIONS_DIRS)
+
+  if(NANOPB_GENERATE_CPP_RELPATH)
+	  list(APPEND _nanopb_include_path "-I${NANOPB_GENERATE_CPP_RELPATH}")
+	  list(APPEND NANOPB_OPTIONS_DIRS ${NANOPB_GENERATE_CPP_RELPATH})
+  endif()
 
   if(NANOPB_GENERATE_CPP_APPEND_PATH)
     # Create an include path for each file specified
@@ -134,10 +141,6 @@ function(NANOPB_GENERATE_CPP SRCS HDRS)
     endforeach()
   else()
     set(_nanopb_include_path "-I${CMAKE_CURRENT_SOURCE_DIR}")
-  endif()
-
-  if(NANOPB_GENERATE_CPP_RELPATH)
-    list(APPEND _nanopb_include_path "-I${NANOPB_GENERATE_CPP_RELPATH}")
   endif()
 
   if(DEFINED NANOPB_IMPORT_DIRS)
@@ -162,7 +165,7 @@ function(NANOPB_GENERATE_CPP SRCS HDRS)
   set(GENERATOR_CORE_SRC
       ${GENERATOR_CORE_DIR}/nanopb.proto)
 
-  # Treat the source diretory as immutable.
+  # Treat the source directory as immutable.
   #
   # Copy the generator directory to the build directory before
   # compiling python and proto files.  Fixes issues when using the
@@ -196,8 +199,8 @@ function(NANOPB_GENERATE_CPP SRCS HDRS)
   endif()
   foreach(FIL ${NANOPB_GENERATE_CPP_UNPARSED_ARGUMENTS})
     get_filename_component(ABS_FIL ${FIL} ABSOLUTE)
-    get_filename_component(FIL_WE ${FIL} NAME_WE)
-    get_filename_component(FIL_DIR ${FIL} PATH)
+    get_filename_component(FIL_WE ${FIL} NAME_WLE)
+    get_filename_component(FIL_DIR ${ABS_FIL} PATH)
     set(FIL_PATH_REL)
     if(ABS_ROOT)
       # Check that the file is under the given "RELPATH"
@@ -214,9 +217,6 @@ function(NANOPB_GENERATE_CPP SRCS HDRS)
 
     list(APPEND ${SRCS} "${CMAKE_CURRENT_BINARY_DIR}/${FIL_PATH_REL}/${FIL_WE}.pb.c")
     list(APPEND ${HDRS} "${CMAKE_CURRENT_BINARY_DIR}/${FIL_PATH_REL}/${FIL_WE}.pb.h")
-
-    set(NANOPB_PLUGIN_OPTIONS)
-    set(NANOPB_OPTIONS_DIRS)
 
     # If there an options file in the same working directory, set it as a dependency
     get_filename_component(ABS_OPT_FIL ${FIL_DIR}/${FIL_WE}.options ABSOLUTE)
@@ -244,6 +244,7 @@ function(NANOPB_GENERATE_CPP SRCS HDRS)
         list(REMOVE_DUPLICATES NANOPB_OPTIONS_DIRS)
     endif()
 
+    set(NANOPB_PLUGIN_OPTIONS)
     foreach(options_path ${NANOPB_OPTIONS_DIRS})
         set(NANOPB_PLUGIN_OPTIONS "${NANOPB_PLUGIN_OPTIONS} -I${options_path}")
     endforeach()
@@ -258,17 +259,9 @@ function(NANOPB_GENERATE_CPP SRCS HDRS)
     # We need to pass the path to the option files to the nanopb plugin. There are two ways to do it.
     # - An older hacky one using ':' as option separator in protoc args preventing the ':' to be used in path.
     # - Or a newer one, using --nanopb_opt which requires a version of protoc >= 3.6
-    # So we will determine which version of protoc we have available and choose accordingly.
-    execute_process(COMMAND ${PROTOBUF_PROTOC_EXECUTABLE} --version OUTPUT_VARIABLE PROTOC_VERSION_STRING OUTPUT_STRIP_TRAILING_WHITESPACE)
-    string(REGEX MATCH "[(0-9)].*.[(0-9)].*.[(0-9)].*" PROTOC_VERSION ${PROTOC_VERSION_STRING})
-
-    if(PROTOC_VERSION VERSION_LESS "3.6.0")
-        #try to use the older way
-        string(REGEX MATCH ":" HAS_COLON_IN_PATH ${NANOPB_PLUGIN_OPTIONS} ${NANOPB_OUT})
-        if(HAS_COLON_IN_PATH)
-          message(FATAL_ERROR "Your path includes a ':' character used as an option separator for nanopb. Upgrade to protoc version >= 3.6.0 or use a different path.")
-        endif()
-        set(NANOPB_OPT_STRING "--nanopb_out=${NANOPB_PLUGIN_OPTIONS}:${NANOPB_OUT}")
+    # Since nanopb 0.4.6, --nanopb_opt is the default.
+    if(DEFINED NANOPB_PROTOC_OLDER_THAN_3_6_0)
+      set(NANOPB_OPT_STRING "--nanopb_out=${NANOPB_PLUGIN_OPTIONS}:${NANOPB_OUT}")
     else()
       set(NANOPB_OPT_STRING "--nanopb_opt=${NANOPB_PLUGIN_OPTIONS}" "--nanopb_out=${NANOPB_OUT}")
     endif()
@@ -277,10 +270,11 @@ function(NANOPB_GENERATE_CPP SRCS HDRS)
       OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${FIL_PATH_REL}/${FIL_WE}.pb.c"
              "${CMAKE_CURRENT_BINARY_DIR}/${FIL_PATH_REL}/${FIL_WE}.pb.h"
       COMMAND  ${PROTOBUF_PROTOC_EXECUTABLE}
-      ARGS -I${GENERATOR_PATH} -I${GENERATOR_CORE_DIR}
-           -I${CMAKE_CURRENT_BINARY_DIR} ${_nanopb_include_path}
+      ARGS ${_nanopb_include_path} -I${GENERATOR_PATH}
+           -I${GENERATOR_CORE_DIR} -I${CMAKE_CURRENT_BINARY_DIR}
            --plugin=protoc-gen-nanopb=${NANOPB_GENERATOR_PLUGIN}
            ${NANOPB_OPT_STRING}
+           ${PROTOC_OPTIONS}
            ${ABS_FIL}
       DEPENDS ${ABS_FIL} ${GENERATOR_CORE_PYTHON_SRC}
            ${ABS_OPT_FIL} ${NANOPB_DEPENDS}
@@ -290,9 +284,18 @@ function(NANOPB_GENERATE_CPP SRCS HDRS)
   endforeach()
 
   set_source_files_properties(${${SRCS}} ${${HDRS}} PROPERTIES GENERATED TRUE)
-  set(${SRCS} ${${SRCS}} ${NANOPB_SRCS} PARENT_SCOPE)
-  set(${HDRS} ${${HDRS}} ${NANOPB_HDRS} PARENT_SCOPE)
 
+  if(NOT DEFINED NANOPB_GENERATE_CPP_STANDALONE)
+    set(NANOPB_GENERATE_CPP_STANDALONE TRUE)
+  endif()
+
+  if (NANOPB_GENERATE_CPP_STANDALONE)
+    set(${SRCS} ${${SRCS}} ${NANOPB_SRCS} PARENT_SCOPE)
+    set(${HDRS} ${${HDRS}} ${NANOPB_HDRS} PARENT_SCOPE)
+  else()
+    set(${SRCS} ${${SRCS}} PARENT_SCOPE)
+    set(${HDRS} ${${HDRS}} PARENT_SCOPE)
+  endif()
 endfunction()
 
 

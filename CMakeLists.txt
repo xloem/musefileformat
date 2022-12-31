@@ -2,9 +2,11 @@ cmake_minimum_required(VERSION 3.10)
 
 project(musefileformat)
 
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/nanopb/extra)
 find_package(Nanopb REQUIRED)
+include_directories(${NANOPB_INCLUDE_DIRS})
 
-find_program(PROTO_GEN NAMES nanopb_generator.py DOC "Nanopb compiler")
+find_program(PROTO_GEN NAMES nanopb_generator.py PATHS ${NANOPB_GENERATOR_SOURCE_DIR} DOC "Nanopb compiler")
 
 add_custom_command(
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v2.pb.h ${CMAKE_CURRENT_SOURCE_DIR}/Muse_v2.pb.c

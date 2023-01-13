@@ -110,6 +110,10 @@ size_t musefile_unpack_data(MusefileDataCollection *mf, uint8_t const *buf)
 #endif
         mf->count = 0;
     }
+//+    if (mf->collection != NULL) {
+//+        muse2__data_collection__free_unpacked((Muse2__DataCollection*)mf->collection, NULL);
+//+        mf->collection = {0};
+//     }
 
     if (mf->version != 2) {
         return 0;
@@ -127,10 +131,16 @@ size_t musefile_unpack_data(MusefileDataCollection *mf, uint8_t const *buf)
 #if defined(PB_ENABLE_MALLOC)
     pb_release(muse2_DataCollection_fields, &dc);
 #endif
+//+    *(DataCollection*)&mf->collection = DataCollection_init_zero;
+//+    status = pdb_decode(&stream, DataCollection_fields, *(DataCollection*)&mf->collection);
 
     if (!status) {
         return 0;
     }
+//+    mf->count = 
+ 
+//+    mf->collection = (ProtobufCMessage*)muse2__data_collection__unpack(NULL, mf->size, buf);
+//+    mf->count = ((Muse2__DataCollection*)mf->collection)->n_collection;
 
     return mf->size;
 }
